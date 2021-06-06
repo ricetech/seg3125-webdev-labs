@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './_app-navbar.scss';
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
 export const AppNavbar = () => {
@@ -15,6 +15,13 @@ export const AppNavbar = () => {
         <Nav className='mr-auto'>
           <Nav.Link as={NavLink} exact to='/' activeClassName='active'>Home</Nav.Link>
           <Nav.Link as={NavLink} to='/lab1' activeClassName='active'>Lab 1</Nav.Link>
+          <NavDropdown id='lab2-dropdown' title='Lab 2' to='/lab2' as={NavLink} className='no-underline-link' activeClassName='active'>
+            <NavDropdown.Item as={NavLink} to='/lab2/products' activeClassName='active'>Products</NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to='/lab2/preferences' activeClassName='active'>
+              Preferences
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to='/lab2/cart' activeClassName='active'>Cart</NavDropdown.Item>
+          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

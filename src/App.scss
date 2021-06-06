@@ -2,3 +2,7 @@
   min-height: calc(100vh - 11rem - 48px);
   margin-bottom: 5rem;
 }
+
+.no-underline-link:hover {
+  text-decoration: none;
+}

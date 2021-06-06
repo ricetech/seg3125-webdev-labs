@@ -9,6 +9,7 @@ import AppNavbar from "./components/app-navbar";
 import AppFooter from "./components/app-footer";
 
 import './App.scss';
+import Lab2Page from "./pages/lab2";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
           <Lab1Page />
         </Route>
         <Redirect from='/labs/lab1/' to='/lab1' />
+        <Route path='/lab2'>
+          <Lab2Page />
+        </Route>
         <Route path='/404'>
           <HTTP404Page />
         </Route>
