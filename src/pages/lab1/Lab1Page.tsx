@@ -74,7 +74,7 @@ export const Lab1Page = () => {
                 <Form.Label>Overall Comments</Form.Label>
                 <Form.Control as='textarea' rows={3} />
               </Form.Group>
-              <Button type='submit' className='mb-3'>Submit</Button>
+              <Button type='submit'>Submit</Button>
             </Form>
           </Col>
         </Row>

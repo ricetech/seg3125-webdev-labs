@@ -6,6 +6,7 @@ import Lab1Page from './pages/lab1';
 
 import './App.scss';
 import AppNavbar from "./components/app-navbar";
+import AppFooter from "./components/app-footer";
 
 const App = () => {
   return (
@@ -15,10 +16,11 @@ const App = () => {
         <Route exact path='/'>
           <HomePage />
         </Route>
-        <Route path={['/lab1', '/labs/lab1']}>
+        <Route path={[ '/lab1', '/labs/lab1' ]}>
           <Lab1Page />
         </Route>
       </Switch>
+      <AppFooter />
     </>
   );
 }
