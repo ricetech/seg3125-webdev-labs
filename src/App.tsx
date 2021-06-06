@@ -18,9 +18,10 @@ const App = () => {
         <Route exact path='/'>
           <HomePage />
         </Route>
-        <Route path={[ '/lab1', '/labs/lab1' ]}>
+        <Route path='/lab1'>
           <Lab1Page />
         </Route>
+        <Redirect from='/labs/lab1/' to='/lab1' />
         <Route path='/404'>
           <HTTP404Page />
         </Route>
