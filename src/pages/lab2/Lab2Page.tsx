@@ -5,6 +5,10 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Restrictions } from "./enums/restrictions";
 import { Product } from "./interfaces/product";
 
+import Lab2ProductsPage from "./pages/products";
+import Lab2PreferencesPage from "./pages/preferences";
+import Lab2CartPage from "./pages/cart";
+
 import './_lab2.scss';
 
 export const Lab2Page = () => {
@@ -25,13 +29,13 @@ export const Lab2Page = () => {
         <hr />
         <Switch>
           <Route path={`${path}/products`}>
-            Products
+            <Lab2ProductsPage preferences={preferences} setPreferences={setPreferences} cart={cart} setCart={setCart} />
           </Route>
           <Route path={`${path}/preferences`}>
-            Preferences
+            <Lab2PreferencesPage preferences={preferences} setPreferences={setPreferences} />
           </Route>
           <Route path={`${path}/cart`}>
-            Cart
+            <Lab2CartPage cart={cart} setCart={setCart} />
           </Route>
         </Switch>
       </Container>
