@@ -2,7 +2,7 @@ import React from 'react';
 
 import './_app-navbar.scss';
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const AppNavbar = () => {
   return (
@@ -13,8 +13,8 @@ export const AppNavbar = () => {
       <Navbar.Toggle aria-controls='app-navbar' />
       <Navbar.Collapse id='app-navbar'>
         <Nav className='mr-auto'>
-          <Nav.Link as={Link} to='/'>Home</Nav.Link>
-          <Nav.Link as={Link} to='/lab1'>Lab 1</Nav.Link>
+          <Nav.Link as={NavLink} exact to='/' activeClassName='active'>Home</Nav.Link>
+          <Nav.Link as={NavLink} to='/lab1' activeClassName='active'>Lab 1</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
