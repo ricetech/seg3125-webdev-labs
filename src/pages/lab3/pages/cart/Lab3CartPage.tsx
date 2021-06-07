@@ -35,59 +35,57 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
 
   return (
     <Container className='container__md'>
+      <Row>
+        <Col>
+          <h2>Cart</h2>
+        </Col>
+      </Row>
       {
         props.cart.size !== 0 ? (
-          <>
-            <Row>
+          <Row>
             <Col>
-              <h2>Cart</h2>
+              <Table hover>
+                <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th />
+                </tr>
+                </thead>
+                <tbody>
+                {sortedFilteredProducts.map((product) => (
+                  <tr key={`lab3-cart-${product.id}`}>
+                    <td>{product.id}</td>
+                    <td>{product.name}</td>
+                    <td>${product.price.toFixed(2)}</td>
+                    <td>
+                      <Button
+                        size='sm'
+                        variant='danger'
+                        className='lab3-cart--del-btn float-right'
+                        onClick={
+                          (event) => {
+                            event.preventDefault();
+                            removeItem(product.id);
+                          }
+                        }
+                      >
+                        Remove item
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+                <tr>
+                  <td />
+                  <td><b>Total</b></td>
+                  <td>{`$${cartTotal()}`}</td>
+                  <td />
+                </tr>
+                </tbody>
+              </Table>
             </Col>
           </Row>
-            <Row>
-              <Col>
-                <Table hover>
-                  <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th />
-                  </tr>
-                  </thead>
-                  <tbody>
-                  {sortedFilteredProducts.map((product) => (
-                    <tr key={`lab3-cart-${product.id}`}>
-                      <td>{product.id}</td>
-                      <td>{product.name}</td>
-                      <td>${product.price.toFixed(2)}</td>
-                      <td>
-                        <Button
-                          size='sm'
-                          variant='danger'
-                          className='lab3-cart--del-btn float-right'
-                          onClick={
-                            (event) => {
-                              event.preventDefault();
-                              removeItem(product.id);
-                            }
-                          }
-                        >
-                          Remove item
-                        </Button>
-                      </td>
-                    </tr>
-                  ))}
-                  <tr>
-                    <td />
-                    <td><b>Total</b></td>
-                    <td>{`$${cartTotal()}`}</td>
-                    <td />
-                  </tr>
-                  </tbody>
-                </Table>
-              </Col>
-            </Row>
-          </>
         ) : (
           <p>Your cart is empty.</p>
         )
