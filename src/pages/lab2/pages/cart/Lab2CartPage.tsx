@@ -49,7 +49,7 @@ export const Lab2CartPage = (props: Lab2CartPageProps) => {
                   </thead>
                   <tbody>
                   {sortedFilteredProducts.map((product) => (
-                    <tr>
+                    <tr key={`lab2-cart-${product.id}`}>
                       <td>{product.id}</td>
                       <td>{product.name}</td>
                       <td>${product.price.toFixed(2)}</td>

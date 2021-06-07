@@ -54,7 +54,7 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
               // A product must satisfy all of the preferences in order to be shown
               return intersection([ ...product.restrictions ], [ ...props.preferences ]).length === props.preferences.size;
             }).map((product) => (
-              <tr>
+              <tr key={`lab2-product-${product.id}`}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>${product.price.toFixed(2)}</td>
