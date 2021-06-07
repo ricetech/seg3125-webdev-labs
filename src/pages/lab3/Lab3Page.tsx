@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import { Col, Container, Row } from "react-bootstrap";
+import { NavLink, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Col, Container, Nav, Row } from "react-bootstrap";
 
 import Lab3ProductsPage from "./pages/products";
 import Lab3PreferencesPage from "./pages/preferences";
@@ -44,10 +44,21 @@ export const Lab3Page = () => {
         <Row>
           <Col>
             <h1>Lab 3 - George's Grocery (Improved)</h1>
-            <p>Please navigate this sub-site using the Lab 3 dropdown in the navbar.</p>
+            <p>Please navigate this sub-site using the secondary navbar below.</p>
           </Col>
         </Row>
         <hr />
+        <Nav variant='pills' justify className='mb-3'>
+          <Nav.Item>
+            <Nav.Link as={NavLink} to={`${path}/preferences`}>Preferences</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={NavLink} to={`${path}/products`}>Products</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={NavLink} to={`${path}/cart`}>Cart</Nav.Link>
+          </Nav.Item>
+        </Nav>
         <Switch>
           <Route path={`${path}/products`}>
             <Lab3ProductsPage preferences={preferences} setPreferences={setPreferences} cart={cart} setCart={setCart} />
