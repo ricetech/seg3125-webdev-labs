@@ -6,7 +6,7 @@ import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 export const Lab1Page = () => {
   return (
     <>
-      <Container className='mt-4 lab1--container'>
+      <Container className='mt-4 container__md'>
         <Row>
           <Col>
             <h1 className='mb-3'>SEG 3125 UI Evaluation</h1>

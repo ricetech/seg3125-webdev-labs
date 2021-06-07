@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export const HomePage = () => {
     return (
-        <Container className='mt-4'>
+        <Container className='mt-4 container__md'>
             <Row>
               <Col>
                 <h1>SEG 3125 Static Coursework - Eric Chen</h1>
