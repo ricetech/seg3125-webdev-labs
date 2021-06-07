@@ -16,6 +16,7 @@ interface Lab2ProductsPageProps {
 }
 
 export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
+
   const addToCart = (itemId: number) => {
     props.setCart(new Set(props.cart).add(itemId));
   }
@@ -68,6 +69,11 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
             ))}
             </tbody>
           </Table>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Button as={Link} to='/lab2/cart'>Go to Cart</Button>
         </Col>
       </Row>
     </>
