@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { Col, Container, Row } from "react-bootstrap";
 
-import { Restrictions } from "./enums/restrictions";
-import { Product } from "./interfaces/product";
-
 import Lab2ProductsPage from "./pages/products";
 import Lab2PreferencesPage from "./pages/preferences";
 import Lab2CartPage from "./pages/cart";
+
+import { Restrictions } from "./enums/restrictions";
 
 import './_lab2.scss';
 

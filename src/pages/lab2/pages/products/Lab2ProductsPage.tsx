@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button, Col, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { intersection } from "lodash-es";
 
 import { Restrictions } from "../../enums/restrictions";
+import { priceComparator } from "../../interfaces/product";
+import { products } from "../../data/products";
 
 import './_lab2-products.scss';
-import { products } from "../../data/products";
-import { priceComparator } from "../../interfaces/product";
-import { intersection } from "lodash-es";
 
 interface Lab2ProductsPageProps {
   preferences: Set<Restrictions>;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Col, Row, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import { priceComparator } from "../../interfaces/product";
+import { products } from "../../data/products";
 
 import './_lab2-cart.scss';
-import { products } from "../../data/products";
-import { Link } from "react-router-dom";
 
 interface Lab2CartPageProps {
   cart: Set<number>;
