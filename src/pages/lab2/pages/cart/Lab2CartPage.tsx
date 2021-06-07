@@ -26,38 +26,46 @@ export const Lab2CartPage = (props: Lab2CartPageProps) => {
 
   return (
     <>
-      <Row>
-        <Col>
-          <h2>Cart</h2>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Table hover>
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price</th>
-            </tr>
-            </thead>
-            <tbody>
-            {sortedFilteredProducts.map((product) => (
-              <tr>
-                <td>{product.id}</td>
-                <td>{product.name}</td>
-                <td>${product.price.toFixed(2)}</td>
-              </tr>
-            ))}
-            <tr>
-              <td />
-              <td><b>Total</b></td>
-              <td>{`$${cartTotal()}`}</td>
-            </tr>
-            </tbody>
-          </Table>
-        </Col>
-      </Row>
+      {
+        props.cart.size !== 0 ? (
+          <>
+            <Row>
+            <Col>
+              <h2>Cart</h2>
+            </Col>
+          </Row>
+            <Row>
+              <Col>
+                <Table hover>
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {sortedFilteredProducts.map((product) => (
+                    <tr>
+                      <td>{product.id}</td>
+                      <td>{product.name}</td>
+                      <td>${product.price.toFixed(2)}</td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <td />
+                    <td><b>Total</b></td>
+                    <td>{`$${cartTotal()}`}</td>
+                  </tr>
+                  </tbody>
+                </Table>
+              </Col>
+            </Row>
+          </>
+        ) : (
+          <p>Your cart is empty.</p>
+        )
+      }
     </>
   );
 }
