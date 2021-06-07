@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { Col, Container, Nav, Row } from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Accordion, Button, Card, Col, Container, Nav, Row } from "react-bootstrap";
 
 import Lab3ProductsPage from "./pages/products";
 import Lab3PreferencesPage from "./pages/preferences";
 import Lab3CartPage from "./pages/cart";
+
+import { ImprovementsList } from "./data/improvementsList";
 
 import { Restrictions } from "./enums/restrictions";
 
@@ -36,7 +38,7 @@ export const Lab3Page = () => {
 
     setPreferences(newPreferences);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lactoseFree, nutFree, organic])
+  }, [ lactoseFree, nutFree, organic ])
 
   return (
     <>
@@ -45,6 +47,25 @@ export const Lab3Page = () => {
           <Col>
             <h1>Lab 3 - George's Grocery (Improved)</h1>
             <p>Please navigate this sub-site using the secondary navbar below.</p>
+            <Accordion>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant='link' eventKey='0'>
+                    List of improvements over Lab 2 (Click to view)
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey='0'>
+                  <Card.Body>
+                    This sample Grocery Store website is an improvement over the one presented for{' '}
+                    <Link to='/lab2/preferences'>Lab 2</Link>.<br />
+                    Below is a list containing the list of everything that I've improved on for this new version of
+                    the grocery store website. The improvements are grouped by category or by the user persona
+                    that the changes are directed at.
+                    <ImprovementsList />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
           </Col>
         </Row>
         <hr />
