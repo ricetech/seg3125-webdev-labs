@@ -13,6 +13,8 @@ interface Lab2CartPageProps {
 }
 
 export const Lab2CartPage = (props: Lab2CartPageProps) => {
+  const emptyCart = () => props.setCart(new Set<number>());
+
   const inCart = (itemId: number) => props.cart.has(itemId);
 
   const sortedFilteredProducts = products.sort(priceComparator).filter((product) => (inCart(product.id)));
@@ -69,7 +71,15 @@ export const Lab2CartPage = (props: Lab2CartPageProps) => {
       }
       <Row>
         <Col>
-          <Button as={Link} to='/lab2/products'>Continue Shopping</Button>
+          <Button as={Link} to='/lab2/products'>Continue Shopping</Button>{' '}
+          {
+            props.cart.size !== 0 ? (
+              <Button variant='danger' onClick={(event) => {
+                event.preventDefault();
+                emptyCart();
+              }}>Empty Cart</Button>
+            ) : null
+          }
         </Col>
       </Row>
     </>
