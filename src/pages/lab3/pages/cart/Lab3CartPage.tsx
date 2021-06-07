@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { priceComparator } from "../../interfaces/product";
 import { products } from "../../data/products";
+
+import EmptyCartModal from "./empty-cart-modal";
 
 import './_lab3-cart.scss';
 
@@ -13,6 +15,8 @@ interface Lab3CartPageProps {
 }
 
 export const Lab3CartPage = (props: Lab3CartPageProps) => {
+  const [showEmptyCart, setShowEmptyCart] = useState(false);
+
   const emptyCart = () => props.setCart(new Set<number>());
 
   const removeItem = (itemId: number): void => {
@@ -102,12 +106,13 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
             props.cart.size !== 0 ? (
               <Button variant='outline-danger' className='float-right' onClick={(event) => {
                 event.preventDefault();
-                emptyCart();
+                setShowEmptyCart(true);
               }}>Empty Cart</Button>
             ) : null
           }
         </Col>
       </Row>
+      <EmptyCartModal show={showEmptyCart} setShow={setShowEmptyCart} emptyCart={emptyCart} />
     </Container>
   );
 }
