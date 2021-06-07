@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Col, Container, Figure, Row } from 'react-bootstrap';
+
 import './_home.scss';
-import { Col, Container, Figure, Row } from "react-bootstrap";
 
 export const HomePage = () => {
   return (
@@ -33,4 +34,4 @@ export const HomePage = () => {
       </Row>
     </Container>
   );
-}
+};

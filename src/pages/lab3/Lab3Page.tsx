@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
+
 import { Link, NavLink, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { Accordion, Button, Card, Col, Container, Nav, Row } from "react-bootstrap";
+import { Accordion, Button, Card, Col, Container, Nav, Row } from 'react-bootstrap';
 
-import Lab3ProductsPage from "./pages/products";
-import Lab3PreferencesPage from "./pages/preferences";
-import Lab3CartPage from "./pages/cart";
+import Lab3ProductsPage from './pages/products';
+import Lab3PreferencesPage from './pages/preferences';
+import Lab3CartPage from './pages/cart';
 
-import { ImprovementsList } from "./data/improvementsList";
+import { ImprovementsList } from './data/improvementsList';
 
-import { Restrictions } from "./enums/restrictions";
+import { Restrictions } from './enums/restrictions';
 
 import './_lab3.scss';
 
@@ -38,7 +39,7 @@ export const Lab3Page = () => {
 
     setPreferences(newPreferences);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ lactoseFree, nutFree, organic ])
+  }, [ lactoseFree, nutFree, organic ]);
 
   return (
     <>
@@ -96,4 +97,4 @@ export const Lab3Page = () => {
       </Container>
     </>
   );
-}
+};

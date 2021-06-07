@@ -1,9 +1,11 @@
 import React from 'react';
-import { Button, Col, Row, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-import { priceComparator } from "../../interfaces/product";
-import { products } from "../../data/products";
+import { Button, Col, Row, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+import { priceComparator } from '../../interfaces/product';
+
+import { products } from '../../data/products';
 
 import './_lab2-cart.scss';
 
@@ -23,9 +25,9 @@ export const Lab2CartPage = (props: Lab2CartPageProps) => {
     let total = 0;
     sortedFilteredProducts.forEach((product) => {
       total += product.price;
-    })
+    });
     return total.toFixed(2);
-  }
+  };
 
   return (
     <>
@@ -33,10 +35,10 @@ export const Lab2CartPage = (props: Lab2CartPageProps) => {
         props.cart.size !== 0 ? (
           <>
             <Row>
-            <Col>
-              <h2>Cart</h2>
-            </Col>
-          </Row>
+              <Col>
+                <h2>Cart</h2>
+              </Col>
+            </Row>
             <Row>
               <Col>
                 <Table hover>
@@ -84,4 +86,4 @@ export const Lab2CartPage = (props: Lab2CartPageProps) => {
       </Row>
     </>
   );
-}
+};

@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from 'react-bootstrap';
 
-import Lab2ProductsPage from "./pages/products";
-import Lab2PreferencesPage from "./pages/preferences";
-import Lab2CartPage from "./pages/cart";
+import Lab2ProductsPage from './pages/products';
+import Lab2PreferencesPage from './pages/preferences';
+import Lab2CartPage from './pages/cart';
 
-import { Restrictions } from "./enums/restrictions";
+import { Restrictions } from './enums/restrictions';
 
 import './_lab2.scss';
 
@@ -36,7 +37,7 @@ export const Lab2Page = () => {
 
     setPreferences(newPreferences);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lactoseFree, nutFree, organic])
+  }, [ lactoseFree, nutFree, organic ]);
 
   return (
     <>
@@ -64,4 +65,4 @@ export const Lab2Page = () => {
       </Container>
     </>
   );
-}
+};

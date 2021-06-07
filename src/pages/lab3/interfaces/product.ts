@@ -1,4 +1,4 @@
-import { Restrictions } from "../enums/restrictions";
+import { Restrictions } from '../enums/restrictions';
 
 export interface Product {
   id: number;
@@ -9,4 +9,4 @@ export interface Product {
 
 export const priceComparator = (a: Product, b: Product): number => {
   return a.price - b.price;
-}
+};

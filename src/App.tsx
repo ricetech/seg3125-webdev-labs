@@ -1,16 +1,17 @@
 import React from 'react';
+
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/home';
-import HTTP404Page from "./pages/404";
+import HTTP404Page from './pages/404';
+
 import Lab1Page from './pages/lab1';
+import Lab2Page from './pages/lab2';
+import Lab3Page from './pages/lab3';
 
-import AppNavbar from "./components/app-navbar";
-import AppFooter from "./components/app-footer";
-
+import AppNavbar from './components/app-navbar';
+import AppFooter from './components/app-footer';
 import './App.scss';
-import Lab2Page from "./pages/lab2";
-import Lab3Page from "./pages/lab3";
 
 const App = () => {
   return (
@@ -39,6 +40,6 @@ const App = () => {
       <AppFooter />
     </>
   );
-}
+};
 
 export default App;

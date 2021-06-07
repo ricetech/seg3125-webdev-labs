@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const ImprovementsList = () => (
   <div className='mt-2'>
@@ -95,4 +95,4 @@ export const ImprovementsList = () => (
       <li>Attempting to access the '/lab3/' URL automatically redirects to '/lab3/preferences/'.</li>
     </ul>
   </div>
-)
+);

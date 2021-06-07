@@ -1,5 +1,5 @@
-import { Product } from "../interfaces/product";
-import { Restrictions } from "../enums/restrictions";
+import { Product } from '../interfaces/product';
+import { Restrictions } from '../enums/restrictions';
 
 export const products: Product[] = [
   {
@@ -92,4 +92,4 @@ export const products: Product[] = [
     ]),
     price: 3.25,
   },
-]
+];

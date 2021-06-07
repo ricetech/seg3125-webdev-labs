@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
-import { Restrictions } from "../../enums/restrictions";
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+import { Restrictions } from '../../enums/restrictions';
 
 import './_lab3-preferences.scss';
-import { Link } from "react-router-dom";
 
 interface Lab3PreferencesPageProps {
   preferences: Set<Restrictions>;
@@ -30,7 +31,7 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
         props.setOrganic(event.target.checked);
         break;
     }
-  }
+  };
 
   return (
     <Container className='container__md'>
@@ -71,4 +72,4 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
       </Row>
     </Container>
   );
-}
+};

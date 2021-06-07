@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Row, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-import { priceComparator } from "../../interfaces/product";
-import { products } from "../../data/products";
+import { Button, Col, Container, Row, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-import EmptyCartModal from "./empty-cart-modal";
+import EmptyCartModal from './empty-cart-modal';
+
+import { priceComparator } from '../../interfaces/product';
+
+import { products } from '../../data/products';
 
 import './_lab3-cart.scss';
 
@@ -15,7 +17,7 @@ interface Lab3CartPageProps {
 }
 
 export const Lab3CartPage = (props: Lab3CartPageProps) => {
-  const [showEmptyCart, setShowEmptyCart] = useState(false);
+  const [ showEmptyCart, setShowEmptyCart ] = useState(false);
 
   const emptyCart = () => props.setCart(new Set<number>());
 
@@ -33,9 +35,9 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
     let total = 0;
     sortedFilteredProducts.forEach((product) => {
       total += product.price;
-    })
+    });
     return total.toFixed(2);
-  }
+  };
 
   return (
     <Container className='container__md'>
@@ -115,4 +117,4 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
       <EmptyCartModal show={showEmptyCart} setShow={setShowEmptyCart} emptyCart={emptyCart} />
     </Container>
   );
-}
+};

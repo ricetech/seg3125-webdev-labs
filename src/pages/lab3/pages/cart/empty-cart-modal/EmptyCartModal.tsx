@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Modal } from "react-bootstrap";
+import React from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
 interface EmptyCartModalProps {
   show: boolean;
@@ -43,5 +43,5 @@ export const EmptyCartModal = (props: EmptyCartModalProps) => {
         </Button>
       </Modal.Footer>
     </Modal>
-  )
-}
+  );
+};

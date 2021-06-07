@@ -1,11 +1,15 @@
 import React from 'react';
-import { Button, Col, Form, Row, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { intersection } from "lodash-es";
 
-import { Restrictions } from "../../enums/restrictions";
-import { priceComparator } from "../../interfaces/product";
-import { products } from "../../data/products";
+import { Button, Col, Form, Row, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+import { intersection } from 'lodash-es';
+
+import { Restrictions } from '../../enums/restrictions';
+
+import { priceComparator } from '../../interfaces/product';
+
+import { products } from '../../data/products';
 
 import './_lab3-products.scss';
 
@@ -20,7 +24,7 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
 
   const addToCart = (itemId: number) => {
     props.setCart(new Set(props.cart).add(itemId));
-  }
+  };
 
   const inCart = (itemId: number) => props.cart.has(itemId);
 
@@ -98,4 +102,4 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
       </Row>
     </>
   );
-}
+};

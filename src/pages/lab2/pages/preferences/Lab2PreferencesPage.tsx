@@ -1,7 +1,7 @@
 import React from 'react';
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Form, Row } from 'react-bootstrap';
 
-import { Restrictions } from "../../enums/restrictions";
+import { Restrictions } from '../../enums/restrictions';
 
 import './_lab2-preferences.scss';
 
@@ -29,7 +29,7 @@ export const Lab2PreferencesPage = (props: Lab2PreferencesPageProps) => {
         props.setOrganic(event.target.checked);
         break;
     }
-  }
+  };
 
   return (
     <>
@@ -56,4 +56,4 @@ export const Lab2PreferencesPage = (props: Lab2PreferencesPageProps) => {
       </Row>
     </>
   );
-}
+};

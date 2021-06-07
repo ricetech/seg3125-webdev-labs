@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+
 import './_lab1.scss';
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 
 export const Lab1Page = () => {
   return (
@@ -81,4 +82,4 @@ export const Lab1Page = () => {
       </Container>
     </>
   );
-}
+};

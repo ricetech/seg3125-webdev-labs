@@ -1,3 +1,3 @@
-import { EmptyCartModal } from "./EmptyCartModal";
+import { EmptyCartModal } from './EmptyCartModal';
 
 export default EmptyCartModal;

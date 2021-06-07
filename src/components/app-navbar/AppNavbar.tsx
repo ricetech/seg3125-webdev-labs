@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './_app-navbar.scss';
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export const AppNavbar = () => {
   let location = useLocation();
@@ -29,4 +29,4 @@ export const AppNavbar = () => {
       </Navbar.Collapse>
     </Navbar>
   );
-}
+};
