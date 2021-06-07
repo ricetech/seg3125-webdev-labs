@@ -97,7 +97,7 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
           <Button as={Link} to='/lab3/products'>Continue Shopping</Button>{' '}
           {
             props.cart.size !== 0 ? (
-              <Button variant='danger' onClick={(event) => {
+              <Button variant='danger' className='float-right' onClick={(event) => {
                 event.preventDefault();
                 emptyCart();
               }}>Empty Cart</Button>
