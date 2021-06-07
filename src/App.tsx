@@ -10,6 +10,7 @@ import AppFooter from "./components/app-footer";
 
 import './App.scss';
 import Lab2Page from "./pages/lab2";
+import Lab3Page from "./pages/lab3";
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
         <Redirect from='/labs/lab1/' to='/lab1' />
         <Route path='/lab2'>
           <Lab2Page />
+        </Route>
+        <Route path='/lab3'>
+          <Lab3Page />
         </Route>
         <Route path='/404'>
           <HTTP404Page />

@@ -24,6 +24,13 @@ export const AppNavbar = () => {
             <NavDropdown.Item as={NavLink} to='/lab2/products' activeClassName='active'>Products</NavDropdown.Item>
             <NavDropdown.Item as={NavLink} to='/lab2/cart' activeClassName='active'>Cart</NavDropdown.Item>
           </NavDropdown>
+          <NavDropdown id='lab3-dropdown' title='Lab 3' className={location.pathname.includes('/lab3') ? 'active' : ''}>
+            <NavDropdown.Item as={NavLink} to='/lab3/preferences' activeClassName='active'>
+              Preferences
+            </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to='/lab3/products' activeClassName='active'>Products</NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to='/lab3/cart' activeClassName='active'>Cart</NavDropdown.Item>
+          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
