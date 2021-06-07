@@ -37,7 +37,7 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
       </Row>
       <Row>
         <Col>
-          <Table hover>
+          <Table hover responsive>
             <thead>
             <tr>
               <th>ID</th>
