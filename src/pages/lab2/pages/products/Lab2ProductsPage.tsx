@@ -9,8 +9,8 @@ import './_lab2-products.scss';
 interface Lab2ProductsPageProps {
   preferences: Restrictions[];
   setPreferences: React.Dispatch<React.SetStateAction<Restrictions[]>>;
-  cart: Product[];
-  setCart: React.Dispatch<React.SetStateAction<Product[]>>;
+  cart: number[];
+  setCart: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
 export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {

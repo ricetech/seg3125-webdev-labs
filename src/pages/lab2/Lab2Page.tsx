@@ -20,7 +20,7 @@ export const Lab2Page = () => {
   const [ nutFree, setNutFree ] = useState(false);
   const [ organic, setOrganic ] = useState(false);
 
-  const [ cart, setCart ] = useState<Product[]>([]);
+  const [ cart, setCart ] = useState<number[]>([]);
 
   // Keep preferences up-to-date
   useEffect(() => {

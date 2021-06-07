@@ -6,8 +6,8 @@ import { Product } from "../../interfaces/product";
 import './_lab2-cart.scss';
 
 interface Lab2CartPageProps {
-  cart: Product[];
-  setCart: React.Dispatch<React.SetStateAction<Product[]>>;
+  cart: number[];
+  setCart: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
 export const Lab2CartPage = (props: Lab2CartPageProps) => {
