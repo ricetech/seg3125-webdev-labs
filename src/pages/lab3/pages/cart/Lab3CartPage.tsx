@@ -64,7 +64,7 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
                         <Button
                           size='sm'
                           variant='danger'
-                          className='lab3-cart--del-btn'
+                          className='lab3-cart--del-btn float-right'
                           onClick={
                             (event) => {
                               event.preventDefault();

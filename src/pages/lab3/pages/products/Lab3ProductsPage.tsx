@@ -60,7 +60,7 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
                 <td>${product.price.toFixed(2)}</td>
                 <td>
                   <Button
-                    className='lab3-products--atc-btn'
+                    className='lab3-products--atc-btn float-right'
                     size='sm'
                     onClick={(event) => {
                       event.preventDefault();
