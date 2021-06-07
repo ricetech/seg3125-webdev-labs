@@ -58,7 +58,7 @@ export const Lab3Page = () => {
                   <Card.Body>
                     This sample Grocery Store website is an improvement over the one presented for{' '}
                     <Link to='/lab2/preferences'>Lab 2</Link>.<br />
-                    Below is a list containing the list of everything that I've improved on for this new version of
+                    Below is a list containing everything that I've improved on for this new version of
                     the grocery store website. The improvements are grouped by category or by the user persona
                     that the changes are directed at.
                     <ImprovementsList />
