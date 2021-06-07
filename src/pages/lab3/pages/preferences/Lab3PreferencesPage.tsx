@@ -37,7 +37,16 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
       <Row>
         <Col>
           <h2>Preferences</h2>
-          <p>Please set your dietary restrictions/preferences below. Changes are saved automatically.</p>
+          <p>
+            Please set your dietary restrictions/preferences below.
+          </p>
+          <p>
+            Your preferences will filter results on the <Link to='/lab3/products'>products</Link> page,
+            as only products that match your preferences will be shown.
+          </p>
+          <p>
+            Changes are saved automatically. You can return to this page at any time to modify your preferences.
+          </p>
           <p><b>Note that your preferences will be lost if you navigate away from the Lab 3 pages.</b></p>
         </Col>
       </Row>
