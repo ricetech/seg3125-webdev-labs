@@ -31,22 +31,22 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
         <Col>
           <Table hover>
             <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th />
-              </tr>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th />
+            </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
-                <tr>
-                  <td>{product.id}</td>
-                  <td>{product.name}</td>
-                  <td>${product.price.toFixed(2)}</td>
-                  <td><Button size='sm'>Add to Cart</Button></td>
-                </tr>
-              ))}
+            {products.map((product) => (
+              <tr>
+                <td>{product.id}</td>
+                <td>{product.name}</td>
+                <td>${product.price.toFixed(2)}</td>
+                <td><Button size='sm'>Add to Cart</Button></td>
+              </tr>
+            ))}
             </tbody>
           </Table>
         </Col>
