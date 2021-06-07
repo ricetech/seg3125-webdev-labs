@@ -61,13 +61,13 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>
-                  <Form.Check checked={product.restrictions.has(Restrictions.LactoseFree)} />
+                  <Form.Check checked={product.restrictions.has(Restrictions.LactoseFree)} readOnly />
                 </td>
                 <td>
-                  <Form.Check checked={product.restrictions.has(Restrictions.NutFree)} />
+                  <Form.Check checked={product.restrictions.has(Restrictions.NutFree)} readOnly />
                 </td>
                 <td>
-                  <Form.Check checked={product.restrictions.has(Restrictions.Organic)} />
+                  <Form.Check checked={product.restrictions.has(Restrictions.Organic)} readOnly />
                 </td>
                 <td>${product.price.toFixed(2)}</td>
                 <td>
