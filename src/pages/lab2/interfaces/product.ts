@@ -6,3 +6,7 @@ export interface Product {
   restrictions: Restrictions[];
   price: number;
 }
+
+export const priceComparator = (a: Product, b: Product): number => {
+  return a.price - b.price;
+}

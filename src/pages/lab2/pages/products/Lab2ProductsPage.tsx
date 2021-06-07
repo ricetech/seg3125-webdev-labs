@@ -6,6 +6,7 @@ import { Restrictions } from "../../enums/restrictions";
 
 import './_lab2-products.scss';
 import { products } from "../../data/products";
+import { priceComparator } from "../../interfaces/product";
 
 interface Lab2ProductsPageProps {
   preferences: Restrictions[];
@@ -44,7 +45,7 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
             </tr>
             </thead>
             <tbody>
-            {products.map((product) => (
+            {products.sort(priceComparator).map((product) => (
               <tr>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
