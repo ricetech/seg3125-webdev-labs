@@ -40,7 +40,7 @@ export const Lab2Page = () => {
 
   return (
     <>
-      <Container className='mt-4 container__md'>
+      <Container className='mt-4 container__fill container__md'>
         <Row>
           <Col>
             <h1>Lab 2 - George's Grocery</h1>

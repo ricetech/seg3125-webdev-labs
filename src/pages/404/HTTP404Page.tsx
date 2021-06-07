@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export const HTTP404Page = () => {
     return (
-        <Container className='mt-4'>
+        <Container className='mt-4 container__md container__fill'>
             <Row>
               <Col>
                 <h1>Page Not Found</h1>
