@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Link, NavLink, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Link, NavLink, Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { Accordion, Button, Card, Col, Container, Nav, Row } from 'react-bootstrap';
 
 import Lab3ProductsPage from './pages/products';
@@ -93,6 +93,7 @@ export const Lab3Page = () => {
           <Route path={`${path}/cart`}>
             <Lab3CartPage cart={cart} setCart={setCart} />
           </Route>
+          <Redirect from={`${path}/*`} to='/404' />
         </Switch>
       </Container>
     </>

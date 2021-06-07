@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import Lab2ProductsPage from './pages/products';
@@ -61,6 +61,7 @@ export const Lab2Page = () => {
           <Route path={`${path}/cart`}>
             <Lab2CartPage cart={cart} setCart={setCart} />
           </Route>
+          <Redirect from={`${path}/*`} to='/404' />
         </Switch>
       </Container>
     </>
