@@ -94,10 +94,10 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
       }
       <Row>
         <Col>
-          <Button as={Link} to='/lab3/products'>Continue Shopping</Button>{' '}
+          <Button variant='secondary' as={Link} to='/lab3/products'>Back to Products</Button>{' '}
           {
             props.cart.size !== 0 ? (
-              <Button variant='danger' className='float-right' onClick={(event) => {
+              <Button variant='outline-danger' className='float-right' onClick={(event) => {
                 event.preventDefault();
                 emptyCart();
               }}>Empty Cart</Button>

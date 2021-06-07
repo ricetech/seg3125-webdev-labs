@@ -80,7 +80,8 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
       </Row>
       <Row>
         <Col>
-          <Button as={Link} to='/lab3/cart'>Go to Cart</Button>
+          <Button variant='secondary' as={Link} to='/lab3/preferences'>Back to Preferences</Button>
+          <Button className='float-right' as={Link} to='/lab3/cart'>Continue to Cart</Button>
         </Col>
       </Row>
     </>

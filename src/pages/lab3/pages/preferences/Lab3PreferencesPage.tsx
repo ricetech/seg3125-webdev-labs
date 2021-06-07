@@ -1,9 +1,10 @@
 import React from 'react';
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
 import { Restrictions } from "../../enums/restrictions";
 
 import './_lab3-preferences.scss';
+import { Link } from "react-router-dom";
 
 interface Lab3PreferencesPageProps {
   preferences: Set<Restrictions>;
@@ -52,6 +53,11 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
                           onChange={(event) => handleChange(Restrictions.Organic, event)} />
             </Form.Group>
           </Form>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Button className='float-right' as={Link} to='/lab3/products'>Continue to Products</Button>
         </Col>
       </Row>
     </Container>
