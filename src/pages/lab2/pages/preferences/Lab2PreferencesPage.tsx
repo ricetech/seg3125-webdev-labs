@@ -6,8 +6,8 @@ import { Restrictions } from "../../enums/restrictions";
 import './_lab2-preferences.scss';
 
 interface Lab2PreferencesPageProps {
-  preferences: Restrictions[];
-  setPreferences: React.Dispatch<React.SetStateAction<Restrictions[]>>;
+  preferences: Set<Restrictions>;
+  setPreferences: React.Dispatch<React.SetStateAction<Set<Restrictions>>>;
   lactoseFree: boolean;
   setLactoseFree: React.Dispatch<React.SetStateAction<boolean>>;
   nutFree: boolean;
@@ -32,18 +32,18 @@ export const Lab2PreferencesPage = (props: Lab2PreferencesPageProps) => {
   }
 
   const handleSubmit = () => {
-    const restrictions = [];
+    const newPreferences = new Set<Restrictions>();
     if (props.lactoseFree) {
-      restrictions.push(Restrictions.LactoseFree);
+      newPreferences.add(Restrictions.LactoseFree);
     }
     if (props.nutFree) {
-      restrictions.push(Restrictions.NutFree);
+      newPreferences.add(Restrictions.NutFree);
     }
     if (props.organic) {
-      restrictions.push(Restrictions.Organic);
+      newPreferences.add(Restrictions.Organic);
     }
 
-    props.setPreferences(restrictions);
+    props.setPreferences(newPreferences);
   }
 
   return (

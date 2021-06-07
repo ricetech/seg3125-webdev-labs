@@ -9,8 +9,8 @@ import { products } from "../../data/products";
 import { priceComparator } from "../../interfaces/product";
 
 interface Lab2ProductsPageProps {
-  preferences: Restrictions[];
-  setPreferences: React.Dispatch<React.SetStateAction<Restrictions[]>>;
+  preferences: Set<Restrictions>;
+  setPreferences: React.Dispatch<React.SetStateAction<Set<Restrictions>>>;
   cart: Set<number>;
   setCart: React.Dispatch<React.SetStateAction<Set<number>>>;
 }

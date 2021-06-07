@@ -14,7 +14,7 @@ import './_lab2.scss';
 export const Lab2Page = () => {
   let { path } = useRouteMatch();
 
-  const [ preferences, setPreferences ] = useState<Restrictions[]>([]);
+  const [ preferences, setPreferences ] = useState<Set<Restrictions>>(new Set());
 
   const [ lactoseFree, setLactoseFree ] = useState(false);
   const [ nutFree, setNutFree ] = useState(false);
@@ -24,20 +24,22 @@ export const Lab2Page = () => {
 
   // Keep preferences up-to-date
   useEffect(() => {
-    const newPreferences = [];
+    const newPreferences = new Set<Restrictions>();
     if (lactoseFree) {
-      newPreferences.push(Restrictions.LactoseFree);
+      newPreferences.add(Restrictions.LactoseFree);
     }
     if (nutFree) {
-      newPreferences.push(Restrictions.NutFree);
+      newPreferences.add(Restrictions.NutFree);
     }
     if (organic) {
-      newPreferences.push(Restrictions.Organic);
+      newPreferences.add(Restrictions.Organic);
     }
 
     setPreferences(newPreferences);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lactoseFree, nutFree, organic])
+
+  useEffect(() => console.log(preferences), [preferences]);
 
   return (
     <>
