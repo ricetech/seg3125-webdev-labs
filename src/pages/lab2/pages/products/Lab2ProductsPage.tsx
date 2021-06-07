@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import React from 'react';
+import { Button, Col, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { Restrictions } from "../../enums/restrictions";
-import { Product } from "../../interfaces/product";
 
 import './_lab2-products.scss';
 import { products } from "../../data/products";
@@ -16,6 +15,12 @@ interface Lab2ProductsPageProps {
 }
 
 export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
+  const addToCart = (itemId: number) => {
+    props.setCart(new Set(props.cart).add(itemId));
+  }
+
+  const inCart = (itemId: number) => props.cart.has(itemId);
+
   return (
     <>
       <Row>
@@ -44,7 +49,20 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>${product.price.toFixed(2)}</td>
-                <td><Button size='sm'>Add to Cart</Button></td>
+                <td>
+                  <Button
+                    className='lab2-products--atc-btn'
+                    size='sm'
+                    onClick={(event) => {
+                      event.preventDefault();
+                      addToCart(product.id);
+                    }}
+                    disabled={inCart(product.id)}
+                    variant={inCart(product.id) ? 'success' : 'primary'}
+                  >
+                    {inCart(product.id) ? 'In Cart' : 'Add to Cart'}
+                  </Button>
+                </td>
               </tr>
             ))}
             </tbody>
