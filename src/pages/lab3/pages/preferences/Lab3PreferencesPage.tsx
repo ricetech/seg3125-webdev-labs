@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 
 import { Restrictions } from "../../enums/restrictions";
 
@@ -32,7 +32,7 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
   }
 
   return (
-    <>
+    <Container className='container__md'>
       <Row>
         <Col>
           <h2>Preferences</h2>
@@ -54,6 +54,6 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
           </Form>
         </Col>
       </Row>
-    </>
+    </Container>
   );
 }

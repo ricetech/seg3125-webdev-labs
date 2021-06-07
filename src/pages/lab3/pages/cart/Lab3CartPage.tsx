@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { priceComparator } from "../../interfaces/product";
@@ -34,7 +34,7 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
   }
 
   return (
-    <>
+    <Container className='container__md'>
       {
         props.cart.size !== 0 ? (
           <>
@@ -105,6 +105,6 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
           }
         </Col>
       </Row>
-    </>
+    </Container>
   );
 }
