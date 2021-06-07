@@ -7,6 +7,7 @@ import { Restrictions } from "../../enums/restrictions";
 import './_lab2-products.scss';
 import { products } from "../../data/products";
 import { priceComparator } from "../../interfaces/product";
+import { intersection } from "lodash-es";
 
 interface Lab2ProductsPageProps {
   preferences: Set<Restrictions>;
@@ -46,7 +47,13 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
             </tr>
             </thead>
             <tbody>
-            {products.sort(priceComparator).map((product) => (
+            {products.sort(priceComparator).filter((product) => {
+              if (props.preferences.size === 0) {
+                return true;
+              }
+              // A product must satisfy all of the preferences in order to be shown
+              return intersection([ ...product.restrictions ], [ ...props.preferences ]).length === props.preferences.size;
+            }).map((product) => (
               <tr>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
