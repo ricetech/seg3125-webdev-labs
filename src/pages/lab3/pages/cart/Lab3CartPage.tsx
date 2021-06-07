@@ -87,7 +87,12 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
             </Col>
           </Row>
         ) : (
-          <p>Your cart is empty.</p>
+          <>
+            <p>Your cart is empty.</p>
+            <p>
+              You can use the button below to return to the Products page and add some products to your cart.
+            </p>
+          </>
         )
       }
       <Row>
