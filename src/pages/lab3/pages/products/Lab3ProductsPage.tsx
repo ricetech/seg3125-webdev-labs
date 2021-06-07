@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Row, Table } from "react-bootstrap";
+import { Button, Col, Form, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { intersection } from "lodash-es";
 
@@ -42,6 +42,9 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
             <tr>
               <th>ID</th>
               <th>Name</th>
+              <th>Lactose Free</th>
+              <th>Nut Free</th>
+              <th>Organic</th>
               <th>Price</th>
               <th />
             </tr>
@@ -57,6 +60,15 @@ export const Lab3ProductsPage = (props: Lab3ProductsPageProps) => {
               <tr key={`lab3-product-${product.id}`}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
+                <td>
+                  <Form.Check checked={product.restrictions.has(Restrictions.LactoseFree)} />
+                </td>
+                <td>
+                  <Form.Check checked={product.restrictions.has(Restrictions.NutFree)} />
+                </td>
+                <td>
+                  <Form.Check checked={product.restrictions.has(Restrictions.Organic)} />
+                </td>
                 <td>${product.price.toFixed(2)}</td>
                 <td>
                   <Button
