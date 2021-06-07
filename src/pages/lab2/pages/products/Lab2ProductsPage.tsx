@@ -11,8 +11,8 @@ import { products } from "../../data/products";
 interface Lab2ProductsPageProps {
   preferences: Restrictions[];
   setPreferences: React.Dispatch<React.SetStateAction<Restrictions[]>>;
-  cart: number[];
-  setCart: React.Dispatch<React.SetStateAction<number[]>>;
+  cart: Set<number>;
+  setCart: React.Dispatch<React.SetStateAction<Set<number>>>;
 }
 
 export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
