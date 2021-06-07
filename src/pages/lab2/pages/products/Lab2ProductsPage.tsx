@@ -37,7 +37,7 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
           <Table hover>
             <thead>
             <tr>
-              <th>#</th>
+              <th>ID</th>
               <th>Name</th>
               <th>Price</th>
               <th />
