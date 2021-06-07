@@ -18,10 +18,10 @@ export const AppNavbar = () => {
           <Nav.Link as={NavLink} exact to='/' activeClassName='active'>Home</Nav.Link>
           <Nav.Link as={NavLink} to='/lab1' activeClassName='active'>Lab 1</Nav.Link>
           <NavDropdown id='lab2-dropdown' title='Lab 2' className={location.pathname.includes('/lab2') ? 'active' : ''}>
-            <NavDropdown.Item as={NavLink} to='/lab2/products' activeClassName='active'>Products</NavDropdown.Item>
             <NavDropdown.Item as={NavLink} to='/lab2/preferences' activeClassName='active'>
               Preferences
             </NavDropdown.Item>
+            <NavDropdown.Item as={NavLink} to='/lab2/products' activeClassName='active'>Products</NavDropdown.Item>
             <NavDropdown.Item as={NavLink} to='/lab2/cart' activeClassName='active'>Cart</NavDropdown.Item>
           </NavDropdown>
         </Nav>
