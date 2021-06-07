@@ -15,6 +15,12 @@ interface Lab3CartPageProps {
 export const Lab3CartPage = (props: Lab3CartPageProps) => {
   const emptyCart = () => props.setCart(new Set<number>());
 
+  const removeItem = (itemId: number): void => {
+    const newCart = new Set(props.cart);
+    newCart.delete(itemId);
+    props.setCart(newCart);
+  };
+
   const inCart = (itemId: number) => props.cart.has(itemId);
 
   const sortedFilteredProducts = products.sort(priceComparator).filter((product) => (inCart(product.id)));
@@ -45,6 +51,7 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
                     <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
+                    <th />
                   </tr>
                   </thead>
                   <tbody>
@@ -53,12 +60,28 @@ export const Lab3CartPage = (props: Lab3CartPageProps) => {
                       <td>{product.id}</td>
                       <td>{product.name}</td>
                       <td>${product.price.toFixed(2)}</td>
+                      <td>
+                        <Button
+                          size='sm'
+                          variant='danger'
+                          className='lab3-cart--del-btn'
+                          onClick={
+                            (event) => {
+                              event.preventDefault();
+                              removeItem(product.id);
+                            }
+                          }
+                        >
+                          Remove item
+                        </Button>
+                      </td>
                     </tr>
                   ))}
                   <tr>
                     <td />
                     <td><b>Total</b></td>
                     <td>{`$${cartTotal()}`}</td>
+                    <td />
                   </tr>
                   </tbody>
                 </Table>
