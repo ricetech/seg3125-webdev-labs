@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 
 import { Restrictions } from "../../enums/restrictions";
 
@@ -31,27 +31,12 @@ export const Lab2PreferencesPage = (props: Lab2PreferencesPageProps) => {
     }
   }
 
-  const handleSubmit = () => {
-    const newPreferences = new Set<Restrictions>();
-    if (props.lactoseFree) {
-      newPreferences.add(Restrictions.LactoseFree);
-    }
-    if (props.nutFree) {
-      newPreferences.add(Restrictions.NutFree);
-    }
-    if (props.organic) {
-      newPreferences.add(Restrictions.Organic);
-    }
-
-    props.setPreferences(newPreferences);
-  }
-
   return (
     <>
       <Row>
         <Col>
           <h2>Preferences</h2>
-          <p>Please set your dietary restrictions/preferences below.</p>
+          <p>Please set your dietary restrictions/preferences below. Changes are saved automatically.</p>
           <p><b>Note that your preferences will be lost if you navigate away from the Lab 2 pages.</b></p>
         </Col>
       </Row>
@@ -66,10 +51,6 @@ export const Lab2PreferencesPage = (props: Lab2PreferencesPageProps) => {
               <Form.Check label='Organic' checked={props.organic}
                           onChange={(event) => handleChange(Restrictions.Organic, event)} />
             </Form.Group>
-            <Button type='submit' onClick={(event) => {
-              event.preventDefault();
-              handleSubmit();
-            }}>Save</Button>
           </Form>
         </Col>
       </Row>
