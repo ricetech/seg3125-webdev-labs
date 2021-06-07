@@ -27,6 +27,7 @@ const App = () => {
         <Route path='/lab2'>
           <Lab2Page />
         </Route>
+        <Redirect exact from='/lab3' to='/lab3/preferences' />
         <Route path='/lab3'>
           <Lab3Page />
         </Route>
