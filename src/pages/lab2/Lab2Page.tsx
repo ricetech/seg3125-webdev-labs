@@ -39,8 +39,6 @@ export const Lab2Page = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lactoseFree, nutFree, organic])
 
-  useEffect(() => console.log(preferences), [preferences]);
-
   return (
     <>
       <Container className='mt-4 container__md'>
