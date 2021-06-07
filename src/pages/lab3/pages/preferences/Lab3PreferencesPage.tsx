@@ -45,11 +45,11 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
         <Col>
           <Form>
             <Form.Group controlId='pref'>
-              <Form.Check label='Lactose Free' checked={props.lactoseFree}
+              <Form.Check label='Lactose Free' checked={props.lactoseFree} type='switch' id='pref-lf'
                           onChange={(event) => handleChange(Restrictions.LactoseFree, event)} />
-              <Form.Check label='Nut Free' checked={props.nutFree}
+              <Form.Check label='Nut Free' checked={props.nutFree} type='switch' id='pref-nf'
                           onChange={(event) => handleChange(Restrictions.NutFree, event)} />
-              <Form.Check label='Organic' checked={props.organic}
+              <Form.Check label='Organic' checked={props.organic} type='switch' id='pref-org'
                           onChange={(event) => handleChange(Restrictions.Organic, event)} />
             </Form.Group>
           </Form>
