@@ -46,9 +46,8 @@ export const Lab3PreferencesPage = (props: Lab3PreferencesPageProps) => {
             as only products that match your preferences will be shown.
           </p>
           <p>
-            Changes are saved automatically. You can return to this page at any time to modify your preferences.
+            Note: Changes are saved automatically. You can return to this page at any time to modify your preferences.
           </p>
-          <p><b>Note that your preferences will be lost if you navigate away from the Lab 3 pages.</b></p>
         </Col>
       </Row>
       <Row>

@@ -16,7 +16,7 @@ export const HomePage = () => {
           </p>
           <p>Please use the navbar at the top of the page to browse the website.</p>
           <p>
-            No content on this website or in its source code may be copied or otherwise stored without
+            No content on this website or its source code may be copied, reused or otherwise stored without
             my express permission.
           </p>
         </Col>

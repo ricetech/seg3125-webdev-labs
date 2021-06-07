@@ -48,6 +48,11 @@ export const Lab3Page = () => {
           <Col>
             <h1>Lab 3 - George's Grocery (Improved)</h1>
             <p>Please navigate this sub-site using the secondary navbar below.</p>
+            <p>
+              <b>Note:</b> The states of your Preferences and Cart are only kept while on the Lab 3 sub-site.
+              Navigating to a different part of the website (Home Page, Lab 1, etc.) will cause your preferences
+              and card to be lost.
+            </p>
             <Accordion>
               <Card>
                 <Card.Header>
