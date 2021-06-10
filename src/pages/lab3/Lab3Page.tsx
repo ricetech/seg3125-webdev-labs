@@ -51,7 +51,7 @@ export const Lab3Page = () => {
             <p>
               <b>Note:</b> The states of your Preferences and Cart are only kept while on the Lab 3 sub-site.
               Navigating to a different part of the website (Home Page, Lab 1, etc.) will cause your preferences
-              and card to be lost.
+              and cart to be lost.
             </p>
             <Accordion>
               <Card>
