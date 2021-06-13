@@ -1,11 +1,15 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 export const Lab4Page = () => {
   return (
     <>
-      <Container className='mt-4 container__fill container__md'>
-        <h1>Lab 4</h1>
+      <Container className='mt-4 container__fill'>
+        <Row>
+          <h1>Lab 4 - Hannah's Physiotherapy Clinic</h1>
+          <p>5575 Second Line, Erin, ON</p>
+        </Row>
+        <hr />
       </Container>
     </>
   )
