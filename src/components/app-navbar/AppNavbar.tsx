@@ -25,6 +25,7 @@ export const AppNavbar = () => {
             <NavDropdown.Item as={NavLink} to='/lab2/cart' activeClassName='active'>Cart</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link as={NavLink} to='/lab3' activeClassName='active'>Lab 3</Nav.Link>
+          <Nav.Link as={NavLink} to='/lab4' activeClassName='active'>Lab 4</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

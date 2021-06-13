@@ -12,6 +12,7 @@ import Lab3Page from './pages/lab3';
 import AppNavbar from './components/app-navbar';
 import AppFooter from './components/app-footer';
 import './App.scss';
+import Lab4Page from './pages/lab4';
 
 const App = () => {
   return (
@@ -31,6 +32,9 @@ const App = () => {
         <Redirect exact from='/lab3' to='/lab3/preferences' />
         <Route path='/lab3'>
           <Lab3Page />
+        </Route>
+        <Route path='/lab4'>
+          <Lab4Page />
         </Route>
         <Route path='/404'>
           <HTTP404Page />
