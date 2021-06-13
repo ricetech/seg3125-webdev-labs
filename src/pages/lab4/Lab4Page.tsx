@@ -1,5 +1,11 @@
 import React from "react";
-import { Card, CardDeck, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+
+import Lab4ServicesTable from "./components/Lab4ServicesTable";
+import Lab4ExpertCards from "./components/Lab4ExpertCards";
+import Lab4AppointmentForm from "./components/Lab4AppointmentForm";
+
+import "./_lab4.scss";
 
 export const Lab4Page = () => {
   return (
@@ -14,38 +20,15 @@ export const Lab4Page = () => {
         <hr />
         <Row>
           <Col>
-            <h3>Services</h3>
+            <Lab4ServicesTable />
           </Col>
           <Col>
-            <h3>Experts</h3>
-            <CardDeck>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <Card.Title>Person</Card.Title>
-                  <Card.Text>Description</Card.Text>
-                </Card.Body>
-              </Card>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <Card.Title>Person</Card.Title>
-                  <Card.Text>Description</Card.Text>
-                </Card.Body>
-              </Card>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <Card.Title>Person</Card.Title>
-                  <Card.Text>Description</Card.Text>
-                </Card.Body>
-              </Card>
-            </CardDeck>
+            <Lab4ExpertCards />
           </Col>
         </Row>
         <Row>
           <Col>
-            <h3>Book an appointment</h3>
+            <Lab4AppointmentForm />
           </Col>
         </Row>
       </Container>
