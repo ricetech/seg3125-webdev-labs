@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, CardDeck, Col, Container, Row } from "react-bootstrap";
 
 export const Lab4Page = () => {
   return (
@@ -18,6 +18,29 @@ export const Lab4Page = () => {
           </Col>
           <Col>
             <h3>Experts</h3>
+            <CardDeck>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>Person</Card.Title>
+                  <Card.Text>Description</Card.Text>
+                </Card.Body>
+              </Card>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>Person</Card.Title>
+                  <Card.Text>Description</Card.Text>
+                </Card.Body>
+              </Card>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Title>Person</Card.Title>
+                  <Card.Text>Description</Card.Text>
+                </Card.Body>
+              </Card>
+            </CardDeck>
           </Col>
         </Row>
         <Row>
