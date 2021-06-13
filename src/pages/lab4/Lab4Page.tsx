@@ -6,8 +6,10 @@ export const Lab4Page = () => {
     <>
       <Container className="mt-4 container__fill">
         <Row>
-          <h1>Lab 4 - Hannah's Physiotherapy Clinic</h1>
-          <p>5575 Second Line, Erin, ON</p>
+          <Col>
+            <h1>Lab 4 - Hannah's Physiotherapy Clinic</h1>
+            <p>5575 Second Line, Erin, ON</p>
+          </Col>
         </Row>
         <hr />
         <Row>
