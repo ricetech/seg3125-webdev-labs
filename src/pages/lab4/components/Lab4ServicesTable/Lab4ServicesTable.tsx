@@ -2,8 +2,13 @@ import React from "react";
 
 import "./_lab4-services-table.scss";
 import { Table } from "react-bootstrap";
+import { Service } from "../../interfaces/service";
 
-export const Lab4ServicesTable = () => {
+interface Lab4ServicesTableProps {
+  services: Service[];
+}
+
+export const Lab4ServicesTable = (props: Lab4ServicesTableProps) => {
   return (
     <>
       <h3>Services</h3>
@@ -15,26 +20,12 @@ export const Lab4ServicesTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Service 1</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Service 2</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Service 3</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Service 4</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>Service 5</td>
-            <td>$10.00</td>
-          </tr>
+          {props.services.map((service) => (
+            <tr key={service.id}>
+              <td>{service.name}</td>
+              <td>${service.price.toFixed(2)}</td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </>

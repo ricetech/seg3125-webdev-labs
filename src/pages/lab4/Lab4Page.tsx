@@ -6,6 +6,7 @@ import Lab4ExpertCards from "./components/Lab4ExpertCards";
 import Lab4AppointmentForm from "./components/Lab4AppointmentForm";
 
 import "./_lab4.scss";
+import { services } from "./data/services";
 
 export const Lab4Page = () => {
   return (
@@ -20,7 +21,7 @@ export const Lab4Page = () => {
         <hr />
         <Row>
           <Col xs={12} md={6}>
-            <Lab4ServicesTable />
+            <Lab4ServicesTable services={services} />
           </Col>
           <Col>
             <Lab4ExpertCards />
@@ -28,7 +29,7 @@ export const Lab4Page = () => {
         </Row>
         <Row>
           <Col>
-            <Lab4AppointmentForm />
+            <Lab4AppointmentForm services={services} />
           </Col>
         </Row>
       </Container>

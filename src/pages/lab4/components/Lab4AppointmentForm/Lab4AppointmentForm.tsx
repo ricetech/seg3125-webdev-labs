@@ -1,9 +1,16 @@
 import React from "react";
 
-import "./_lab4-appointment-form.scss";
 import { Button, Col, Container, Form } from "react-bootstrap";
 
-export const Lab4AppointmentForm = () => {
+import { Service } from "../../interfaces/service";
+
+import "./_lab4-appointment-form.scss";
+
+interface Lab4AppointmentFormProps {
+  services: Service[];
+}
+
+export const Lab4AppointmentForm = (props: Lab4AppointmentFormProps) => {
   return (
     <>
       <Container className="container__md">
@@ -32,11 +39,9 @@ export const Lab4AppointmentForm = () => {
               <Form.Label>Service</Form.Label>
               <Form.Control as="select">
                 <option selected>Select one...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                {props.services.map((service) => (
+                  <option key={service.id}>{service.name}</option>
+                ))}
               </Form.Control>
             </Form.Group>
           </Form.Row>
