@@ -1,4 +1,4 @@
-import { Restrictions } from '../enums/restrictions';
+import { Restrictions } from "../enums/restrictions";
 
 export interface Product {
   id: number;

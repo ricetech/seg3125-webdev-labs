@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import { Button, Col, Row, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Col, Row, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import { intersection } from 'lodash-es';
+import { intersection } from "lodash-es";
 
-import { Restrictions } from '../../enums/restrictions';
+import { Restrictions } from "../../enums/restrictions";
 
-import { priceComparator } from '../../interfaces/product';
+import { priceComparator } from "../../interfaces/product";
 
-import { products } from '../../data/products';
+import { products } from "../../data/products";
 
-import './_lab2-products.scss';
+import "./_lab2-products.scss";
 
 interface Lab2ProductsPageProps {
   preferences: Set<Restrictions>;
@@ -21,7 +21,6 @@ interface Lab2ProductsPageProps {
 }
 
 export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
-
   const addToCart = (itemId: number) => {
     props.setCart(new Set(props.cart).add(itemId));
   };
@@ -34,8 +33,8 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
         <Col>
           <h2>Products</h2>
           <p>
-            Based on your <Link to='/lab2/preferences'>preferences</Link>, we have curated the following
-            products for you.
+            Based on your <Link to="/lab2/preferences">preferences</Link>, we
+            have curated the following products for you.
           </p>
         </Col>
       </Row>
@@ -43,48 +42,58 @@ export const Lab2ProductsPage = (props: Lab2ProductsPageProps) => {
         <Col>
           <Table hover>
             <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th />
-            </tr>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th />
+              </tr>
             </thead>
             <tbody>
-            {products.sort(priceComparator).filter((product) => {
-              if (props.preferences.size === 0) {
-                return true;
-              }
-              // A product must satisfy all of the preferences in order to be shown
-              return intersection([ ...product.restrictions ], [ ...props.preferences ]).length === props.preferences.size;
-            }).map((product) => (
-              <tr key={`lab2-product-${product.id}`}>
-                <td>{product.id}</td>
-                <td>{product.name}</td>
-                <td>${product.price.toFixed(2)}</td>
-                <td>
-                  <Button
-                    className='lab2-products--atc-btn'
-                    size='sm'
-                    onClick={(event) => {
-                      event.preventDefault();
-                      addToCart(product.id);
-                    }}
-                    disabled={inCart(product.id)}
-                    variant={inCart(product.id) ? 'success' : 'primary'}
-                  >
-                    {inCart(product.id) ? 'In Cart' : 'Add to Cart'}
-                  </Button>
-                </td>
-              </tr>
-            ))}
+              {products
+                .sort(priceComparator)
+                .filter((product) => {
+                  if (props.preferences.size === 0) {
+                    return true;
+                  }
+                  // A product must satisfy all of the preferences in order to be shown
+                  return (
+                    intersection(
+                      [...product.restrictions],
+                      [...props.preferences]
+                    ).length === props.preferences.size
+                  );
+                })
+                .map((product) => (
+                  <tr key={`lab2-product-${product.id}`}>
+                    <td>{product.id}</td>
+                    <td>{product.name}</td>
+                    <td>${product.price.toFixed(2)}</td>
+                    <td>
+                      <Button
+                        className="lab2-products--atc-btn"
+                        size="sm"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          addToCart(product.id);
+                        }}
+                        disabled={inCart(product.id)}
+                        variant={inCart(product.id) ? "success" : "primary"}
+                      >
+                        {inCart(product.id) ? "In Cart" : "Add to Cart"}
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
         </Col>
       </Row>
       <Row>
         <Col>
-          <Button as={Link} to='/lab2/cart'>Go to Cart</Button>
+          <Button as={Link} to="/lab2/cart">
+            Go to Cart
+          </Button>
         </Col>
       </Row>
     </>
