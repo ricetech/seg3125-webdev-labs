@@ -19,7 +19,7 @@ export const Lab4Page = () => {
         </Row>
         <hr />
         <Row>
-          <Col>
+          <Col xs={12} md={6}>
             <Lab4ServicesTable />
           </Col>
           <Col>
