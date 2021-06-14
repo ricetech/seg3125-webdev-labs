@@ -10,7 +10,7 @@ export const Lab4ExpertCards = () => {
       <Row>
         <Col>
           <CardDeck>
-            <Card style={{ width: "15rem" }}>
+            <Card className="lab4--card">
               <Card.Img variant="top" src="img/lab4/expert1.jpg" />
               <Card.Body>
                 <Card.Title>Hannah</Card.Title>
@@ -21,7 +21,7 @@ export const Lab4ExpertCards = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card style={{ width: "15rem" }}>
+            <Card className="lab4--card">
               <Card.Img variant="top" src="img/lab4/expert2.jpg" />
               <Card.Body>
                 <Card.Title>Joe</Card.Title>
@@ -32,7 +32,7 @@ export const Lab4ExpertCards = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card style={{ width: "15rem" }}>
+            <Card className="lab4--card">
               <Card.Img variant="top" src="img/lab4/expert3.jpg" />
               <Card.Body>
                 <Card.Title>Samantha</Card.Title>
