@@ -32,7 +32,7 @@ export const Lab4AppointmentForm = (props: Lab4AppointmentFormProps) => {
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} controlId="apptDateTime">
-              <Form.Label>Appointment Date & Time</Form.Label>
+              <Form.Label>Appt. Date & Time</Form.Label>
               <Form.Control type="datetime-local" />
             </Form.Group>
             <Form.Group as={Col} controlId="apptService">
