@@ -54,6 +54,9 @@ export const AppNavbar = () => {
           <Nav.Link as={NavLink} to="/lab4" activeClassName="active">
             Lab 4
           </Nav.Link>
+          <Nav.Link as={NavLink} to="/lab5" activeClassName="active">
+            Lab 5
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
