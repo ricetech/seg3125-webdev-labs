@@ -216,6 +216,9 @@ const InnerForm = (
             inputProps={{
               disabled: !touched.apptPref || values.apptPref === SELECT_TEXT,
             }}
+            timeConstraints={{
+              hours: { min: 7, max: 23, step: 1 },
+            }}
           />
           <FormError
             show={!!touched.apptDateTime && !!errors.apptDateTime}
