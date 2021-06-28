@@ -9,6 +9,7 @@ import { Service } from "../../interfaces/service";
 import "./_lab5-appointment-form.scss";
 
 const SELECT_TEXT = "Select one...";
+const REQUIRED_TEXT = "This field is required";
 
 interface Lab4AppointmentFormProps {
   services: Service[];
@@ -28,16 +29,16 @@ interface FormValues {
 }
 
 const schema = Yup.object().shape({
-  patientName: Yup.string().required(),
-  patientEmail: Yup.string().email().required(),
-  patientPhone: Yup.string().required(),
-  apptDateTime: Yup.string().required(),
-  apptPref: Yup.string().required(),
-  apptService: Yup.string().required(),
-  apptCardholderName: Yup.string().required(),
-  apptCardNumber: Yup.number().min(16).max(19).required(),
-  apptCardExpiry: Yup.string().required(),
-  apptCardCCV: Yup.number().min(3).max(4).required(),
+  patientName: Yup.string().required(REQUIRED_TEXT),
+  patientEmail: Yup.string().email().required(REQUIRED_TEXT),
+  patientPhone: Yup.string().required(REQUIRED_TEXT),
+  apptDateTime: Yup.string().required(REQUIRED_TEXT),
+  apptPref: Yup.string().required(REQUIRED_TEXT),
+  apptService: Yup.string().required(REQUIRED_TEXT),
+  apptCardholderName: Yup.string().required(REQUIRED_TEXT),
+  apptCardNumber: Yup.number().min(16).max(19).required(REQUIRED_TEXT),
+  apptCardExpiry: Yup.string().required(REQUIRED_TEXT),
+  apptCardCCV: Yup.number().min(3).max(4).required(REQUIRED_TEXT),
 });
 
 interface FormErrorProps {
