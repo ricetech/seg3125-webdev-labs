@@ -60,8 +60,12 @@ const schema = Yup.object().shape({
     })
     .required(REQUIRED_TEXT),
   apptDateTime: Yup.string().required(REQUIRED_TEXT),
-  apptPref: Yup.string().required(REQUIRED_TEXT),
-  apptService: Yup.string().required(REQUIRED_TEXT),
+  apptPref: Yup.string()
+    .matches(/^((?!Select one\.\.\.).)*$/, REQUIRED_TEXT)
+    .required(REQUIRED_TEXT),
+  apptService: Yup.string()
+    .matches(/^((?!Select one\.\.\.).)*$/, REQUIRED_TEXT)
+    .required(REQUIRED_TEXT),
   apptCardholderName: Yup.string().required(REQUIRED_TEXT),
   apptCardNumber: Yup.string()
     .matches(/^(?:\d|\s)+$/, {
