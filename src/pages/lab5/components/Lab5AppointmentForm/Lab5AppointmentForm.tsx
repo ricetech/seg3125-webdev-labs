@@ -16,6 +16,7 @@ export const Lab5AppointmentForm = (props: Lab4AppointmentFormProps) => {
       <Container className="container__md">
         <h3>Book an Appointment</h3>
         <Form>
+          <h5>Patient Info</h5>
           <Form.Group controlId="apptName">
             <Form.Label>Patient Name</Form.Label>
             <Form.Control type="text" placeholder="Enter full name" />
@@ -30,6 +31,7 @@ export const Lab5AppointmentForm = (props: Lab4AppointmentFormProps) => {
               <Form.Control type="tel" placeholder="123-456-7890" />
             </Form.Group>
           </Form.Row>
+          <h5>Appointment Info</h5>
           <Form.Row>
             <Form.Group as={Col} controlId="apptDateTime">
               <Form.Label>Appt. Date & Time</Form.Label>
