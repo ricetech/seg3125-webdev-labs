@@ -37,6 +37,15 @@ export const Lab5AppointmentForm = (props: Lab4AppointmentFormProps) => {
               <Form.Label>Appt. Date & Time</Form.Label>
               <Form.Control type="datetime-local" />
             </Form.Group>
+            <Form.Group as={Col} controlId="apptPref">
+              <Form.Label>Preferred Expert</Form.Label>
+              <Form.Control as="select">
+                <option selected>Select one...</option>
+                <option>Hannah</option>
+                <option>Joe</option>
+                <option>Samantha</option>
+              </Form.Control>
+            </Form.Group>
             <Form.Group as={Col} controlId="apptService">
               <Form.Label>Service</Form.Label>
               <Form.Control as="select">
