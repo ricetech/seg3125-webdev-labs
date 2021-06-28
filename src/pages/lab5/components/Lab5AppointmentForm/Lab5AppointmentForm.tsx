@@ -30,7 +30,7 @@ interface FormValues {
 
 const schema = Yup.object().shape({
   patientName: Yup.string().required(REQUIRED_TEXT),
-  patientEmail: Yup.string().email().required(REQUIRED_TEXT),
+  patientEmail: Yup.string().email("Email is invalid").required(REQUIRED_TEXT),
   patientPhone: Yup.string().required(REQUIRED_TEXT),
   apptDateTime: Yup.string().required(REQUIRED_TEXT),
   apptPref: Yup.string().required(REQUIRED_TEXT),
