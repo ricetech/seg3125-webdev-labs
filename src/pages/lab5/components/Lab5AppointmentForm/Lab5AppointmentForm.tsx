@@ -164,6 +164,26 @@ const InnerForm = (
         <BsClock /> Appointment Info
       </h5>
       <Form.Row>
+        <Form.Group as={Col} controlId="apptPref">
+          <Form.Label>Preferred Expert</Form.Label>
+          <Form.Control
+            as="select"
+            name="apptPref"
+            value={values.apptPref}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            isInvalid={touched.apptPref && !!errors.apptPref}
+          >
+            <option>{SELECT_TEXT}</option>
+            <option>Hannah</option>
+            <option>Joe</option>
+            <option>Samantha</option>
+          </Form.Control>
+          <FormError
+            show={!!touched.apptPref && !!errors.apptPref}
+            msg={errors.apptPref}
+          />
+        </Form.Group>
         <Form.Group as={Col} controlId="apptDateTime">
           <Form.Label>Appt. Date & Time</Form.Label>
           <Datetime
@@ -193,26 +213,6 @@ const InnerForm = (
           <FormError
             show={!!touched.apptDateTime && !!errors.apptDateTime}
             msg={errors.apptDateTime}
-          />
-        </Form.Group>
-        <Form.Group as={Col} controlId="apptPref">
-          <Form.Label>Preferred Expert</Form.Label>
-          <Form.Control
-            as="select"
-            name="apptPref"
-            value={values.apptPref}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            isInvalid={touched.apptPref && !!errors.apptPref}
-          >
-            <option>{SELECT_TEXT}</option>
-            <option>Hannah</option>
-            <option>Joe</option>
-            <option>Samantha</option>
-          </Form.Control>
-          <FormError
-            show={!!touched.apptPref && !!errors.apptPref}
-            msg={errors.apptPref}
           />
         </Form.Group>
         <Form.Group as={Col} controlId="apptService">
