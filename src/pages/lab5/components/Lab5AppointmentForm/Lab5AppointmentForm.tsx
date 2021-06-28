@@ -22,7 +22,7 @@ import Datetime from "react-datetime";
 import { Service } from "../../interfaces/service";
 
 import "./_lab5-appointment-form.scss";
-import { Moment } from "moment";
+import moment, { Moment } from "moment";
 
 const SELECT_TEXT = "Select one...";
 const REQUIRED_TEXT = "This field is required.";
@@ -46,6 +46,31 @@ interface FormValues {
 
 const isDateValid = (date: Moment, validDays: number[]) => {
   return validDays.includes(date.day());
+};
+
+const getNextBusinessDay = () => {
+  const nextBusinessDay = moment();
+  // Reset to nearest hour
+  nextBusinessDay.add(60 - nextBusinessDay.minute(), "m");
+  // Reset to open hours
+  if (nextBusinessDay.hour() < 7 || nextBusinessDay.hour() >= 23) {
+    nextBusinessDay.hour(7);
+  }
+  // Reset to open day of the week
+  let daysToAdd = 0;
+  switch (nextBusinessDay.day()) {
+    case 5:
+      daysToAdd = 3;
+      break;
+    case 6:
+      daysToAdd = 2;
+      break;
+    case 0:
+      daysToAdd = 1;
+      break;
+  }
+  nextBusinessDay.add(daysToAdd, "d");
+  return nextBusinessDay;
 };
 
 const schema = Yup.object().shape({
@@ -352,7 +377,7 @@ const Lab5FormikForm = withFormik<Lab5AppointmentFormProps, FormValues>({
       patientName: "",
       patientEmail: "",
       patientPhone: "",
-      apptDateTime: "",
+      apptDateTime: getNextBusinessDay(),
       apptPref: SELECT_TEXT,
       apptService: SELECT_TEXT,
       apptCardholderName: "",
