@@ -249,7 +249,7 @@ const InnerForm = (
 };
 
 const Lab5FormikForm = withFormik<Lab4AppointmentFormProps, FormValues>({
-  mapPropsToValues: (props) => {
+  mapPropsToValues: () => {
     return {
       patientName: "",
       patientEmail: "",
