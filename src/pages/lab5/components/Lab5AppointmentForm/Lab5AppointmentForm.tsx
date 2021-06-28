@@ -17,10 +17,12 @@ import {
 } from "react-icons/bs";
 import * as Yup from "yup";
 import { withFormik, FormikProps } from "formik";
+import Datetime from "react-datetime";
 
 import { Service } from "../../interfaces/service";
 
 import "./_lab5-appointment-form.scss";
+import { Moment } from "moment";
 
 const SELECT_TEXT = "Select one...";
 const REQUIRED_TEXT = "This field is required";
@@ -33,7 +35,7 @@ interface FormValues {
   patientName: string;
   patientEmail: string;
   patientPhone: string;
-  apptDateTime: string;
+  apptDateTime: Moment | string;
   apptPref: string;
   apptService: string;
   apptCardholderName: string;
@@ -88,7 +90,16 @@ const FormError = (props: FormErrorProps) => {
 const InnerForm = (
   props: Lab5AppointmentFormProps & FormikProps<FormValues>
 ) => {
-  const { services, touched, values, errors, handleChange, handleBlur } = props;
+  const {
+    services,
+    touched,
+    values,
+    errors,
+    handleChange,
+    handleBlur,
+    setFieldValue,
+    setFieldTouched,
+  } = props;
   // noinspection RequiredAttributes
   return (
     <Form noValidate>
@@ -151,13 +162,14 @@ const InnerForm = (
       <Form.Row>
         <Form.Group as={Col} controlId="apptDateTime">
           <Form.Label>Appt. Date & Time</Form.Label>
-          <Form.Control
-            type="datetime-local"
-            name="apptDateTime"
+          <Datetime
             value={values.apptDateTime}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            isInvalid={touched.apptDateTime && !!errors.apptDateTime}
+            onChange={(newDate) => {
+              setFieldValue("apptDateTime", newDate);
+            }}
+            onOpen={() => {
+              setFieldTouched("apptDateTime");
+            }}
           />
           <FormError
             show={!!touched.apptDateTime && !!errors.apptDateTime}
