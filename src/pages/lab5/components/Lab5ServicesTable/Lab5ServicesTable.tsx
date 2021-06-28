@@ -5,11 +5,11 @@ import { Table } from "react-bootstrap";
 import { Service } from "../../interfaces/service";
 import { BsLifePreserver } from "react-icons/bs";
 
-interface Lab4ServicesTableProps {
+interface Lab5ServicesTableProps {
   services: Service[];
 }
 
-export const Lab5ServicesTable = (props: Lab4ServicesTableProps) => {
+export const Lab5ServicesTable = (props: Lab5ServicesTableProps) => {
   return (
     <>
       <h3>

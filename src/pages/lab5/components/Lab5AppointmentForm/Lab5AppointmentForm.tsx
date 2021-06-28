@@ -12,7 +12,7 @@ import "./_lab5-appointment-form.scss";
 const SELECT_TEXT = "Select one...";
 const REQUIRED_TEXT = "This field is required";
 
-interface Lab4AppointmentFormProps {
+interface Lab5AppointmentFormProps {
   services: Service[];
 }
 
@@ -55,7 +55,7 @@ const FormError = (props: FormErrorProps) => {
 };
 
 const InnerForm = (
-  props: Lab4AppointmentFormProps & FormikProps<FormValues>
+  props: Lab5AppointmentFormProps & FormikProps<FormValues>
 ) => {
   const { services, touched, values, errors, handleChange, handleBlur } = props;
   return (
@@ -255,7 +255,7 @@ const InnerForm = (
   );
 };
 
-const Lab5FormikForm = withFormik<Lab4AppointmentFormProps, FormValues>({
+const Lab5FormikForm = withFormik<Lab5AppointmentFormProps, FormValues>({
   mapPropsToValues: () => {
     return {
       patientName: "",
@@ -278,7 +278,7 @@ const Lab5FormikForm = withFormik<Lab4AppointmentFormProps, FormValues>({
   },
 })(InnerForm);
 
-export const Lab5AppointmentForm = (props: Lab4AppointmentFormProps) => {
+export const Lab5AppointmentForm = (props: Lab5AppointmentFormProps) => {
   return (
     <>
       <Container className="container__md">
