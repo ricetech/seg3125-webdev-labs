@@ -209,6 +209,9 @@ const InnerForm = (
               }
               return isDateValid(date, validDays);
             }}
+            inputProps={{
+              disabled: !touched.apptPref || values.apptPref === SELECT_TEXT,
+            }}
           />
           <FormError
             show={!!touched.apptDateTime && !!errors.apptDateTime}
