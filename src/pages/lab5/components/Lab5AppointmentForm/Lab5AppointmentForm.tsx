@@ -47,7 +47,12 @@ const schema = Yup.object().shape({
   patientEmail: Yup.string()
     .email("Not a valid email address")
     .required(REQUIRED_TEXT),
-  patientPhone: Yup.string().required(REQUIRED_TEXT),
+  patientPhone: Yup.string()
+    .matches(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/, {
+      message:
+        "Not a valid telephone number. Must be in the format 1234567890, (123)456-7890 or 123-456-7890",
+    })
+    .required(REQUIRED_TEXT),
   apptDateTime: Yup.string().required(REQUIRED_TEXT),
   apptPref: Yup.string().required(REQUIRED_TEXT),
   apptService: Yup.string().required(REQUIRED_TEXT),
