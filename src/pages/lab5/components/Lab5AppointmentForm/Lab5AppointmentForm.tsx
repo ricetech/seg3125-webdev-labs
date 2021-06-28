@@ -25,7 +25,7 @@ import "./_lab5-appointment-form.scss";
 import { Moment } from "moment";
 
 const SELECT_TEXT = "Select one...";
-const REQUIRED_TEXT = "This field is required";
+const REQUIRED_TEXT = "This field is required.";
 
 interface Lab5AppointmentFormProps {
   services: Service[];
@@ -51,12 +51,12 @@ const isDateValid = (date: Moment, validDays: number[]) => {
 const schema = Yup.object().shape({
   patientName: Yup.string().required(REQUIRED_TEXT),
   patientEmail: Yup.string()
-    .email("Not a valid email address")
+    .email("Not a valid email address.")
     .required(REQUIRED_TEXT),
   patientPhone: Yup.string()
     .matches(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/, {
       message:
-        "Not a valid telephone number. Must be in the format 1234567890, (123)456-7890 or 123-456-7890",
+        "Not a valid telephone number. Must be in the format 1234567890, (123)456-7890 or 123-456-7890.",
     })
     .required(REQUIRED_TEXT),
   apptDateTime: Yup.string().required(REQUIRED_TEXT),
@@ -66,11 +66,11 @@ const schema = Yup.object().shape({
   apptCardNumber: Yup.string()
     .matches(/^(?:\d|\s)+$/, {
       message:
-        "Invalid credit card number. You should only input numbers or spaces",
+        "Invalid credit card number. You should only input numbers or spaces.",
     })
     .matches(/^(?:\d{4}\s){3}\d{4}$/, {
       message:
-        "Invalid credit card number. Must be in the format xxxx xxxx xxxx xxxx",
+        "Invalid credit card number. Must be in the format xxxx xxxx xxxx xxxx.",
     })
     .required(REQUIRED_TEXT),
   apptCardExpiry: Yup.string().required(REQUIRED_TEXT),
