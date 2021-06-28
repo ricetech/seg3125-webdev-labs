@@ -40,6 +40,18 @@ const schema = Yup.object().shape({
   apptCardCCV: Yup.number().min(3).max(4).required(),
 });
 
+interface FormErrorProps {
+  show: boolean;
+  msg: string | undefined;
+}
+
+const FormError = (props: FormErrorProps) => {
+  const { show, msg } = props;
+  return show ? (
+    <Form.Control.Feedback type="invalid">{msg}</Form.Control.Feedback>
+  ) : null;
+};
+
 const InnerForm = (
   props: Lab4AppointmentFormProps & FormikProps<FormValues>
 ) => {
@@ -58,6 +70,10 @@ const InnerForm = (
           onChange={handleChange}
           isInvalid={touched.patientName && !!errors.patientName}
         />
+        <FormError
+          show={!!touched.patientName && !!errors.patientName}
+          msg={errors.patientName}
+        />
       </Form.Group>
       <Form.Row>
         <Form.Group as={Col} controlId="apptEmail">
@@ -71,6 +87,10 @@ const InnerForm = (
             onChange={handleChange}
             isInvalid={touched.patientEmail && !!errors.patientEmail}
           />
+          <FormError
+            show={!!touched.patientEmail && !!errors.patientEmail}
+            msg={errors.patientEmail}
+          />
         </Form.Group>
         <Form.Group as={Col} controlId="apptPhone">
           <Form.Label>Patient Phone Number</Form.Label>
@@ -82,6 +102,10 @@ const InnerForm = (
             onBlur={handleBlur}
             onChange={handleChange}
             isInvalid={touched.patientPhone && !!errors.patientPhone}
+          />
+          <FormError
+            show={!!touched.patientPhone && !!errors.patientPhone}
+            msg={errors.patientPhone}
           />
         </Form.Group>
       </Form.Row>
@@ -96,6 +120,10 @@ const InnerForm = (
             onBlur={handleBlur}
             onChange={handleChange}
             isInvalid={touched.apptDateTime && !!errors.apptDateTime}
+          />
+          <FormError
+            show={!!touched.apptDateTime && !!errors.apptDateTime}
+            msg={errors.apptDateTime}
           />
         </Form.Group>
         <Form.Group as={Col} controlId="apptPref">
@@ -113,6 +141,10 @@ const InnerForm = (
             <option>Joe</option>
             <option>Samantha</option>
           </Form.Control>
+          <FormError
+            show={!!touched.apptPref && !!errors.apptPref}
+            msg={errors.apptPref}
+          />
         </Form.Group>
         <Form.Group as={Col} controlId="apptService">
           <Form.Label>Service</Form.Label>
@@ -129,6 +161,10 @@ const InnerForm = (
               <option key={service.id}>{service.name}</option>
             ))}
           </Form.Control>
+          <FormError
+            show={!!touched.apptService && !!errors.apptService}
+            msg={errors.apptService}
+          />
         </Form.Group>
       </Form.Row>
       <h5>Payment Info</h5>
@@ -145,6 +181,10 @@ const InnerForm = (
               touched.apptCardholderName && !!errors.apptCardholderName
             }
           />
+          <FormError
+            show={!!touched.apptCardholderName && !!errors.apptCardholderName}
+            msg={errors.apptCardholderName}
+          />
         </Form.Group>
         <Form.Group as={Col} controlId="apptCardNumber">
           <Form.Label>Card Number</Form.Label>
@@ -156,6 +196,10 @@ const InnerForm = (
             onBlur={handleBlur}
             onChange={handleChange}
             isInvalid={touched.apptCardNumber && !!errors.apptCardNumber}
+          />
+          <FormError
+            show={!!touched.apptCardNumber && !!errors.apptCardNumber}
+            msg={errors.apptCardNumber}
           />
         </Form.Group>
       </Form.Row>
@@ -170,6 +214,10 @@ const InnerForm = (
             onChange={handleChange}
             isInvalid={touched.apptCardExpiry && !!errors.apptCardExpiry}
           />
+          <FormError
+            show={!!touched.apptCardExpiry && !!errors.apptCardExpiry}
+            msg={errors.apptCardExpiry}
+          />
         </Form.Group>
         <Form.Group as={Col} controlId="apptCardCCV">
           <Form.Label>Card CCV</Form.Label>
@@ -180,6 +228,10 @@ const InnerForm = (
             onBlur={handleBlur}
             onChange={handleChange}
             isInvalid={touched.apptCardCCV && !!errors.apptCardCCV}
+          />
+          <FormError
+            show={!!touched.apptCardCCV && !!errors.apptCardCCV}
+            msg={errors.apptCardCCV}
           />
         </Form.Group>
       </Form.Row>
