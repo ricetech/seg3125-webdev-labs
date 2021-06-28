@@ -1,14 +1,18 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { useRouteMatch } from "react-router-dom";
+import { Col, Container, Nav, Row } from "react-bootstrap";
+import { NavHashLink } from "react-router-hash-link";
 
 import Lab5ServicesTable from "./components/Lab5ServicesTable";
 import Lab5ExpertCards from "./components/Lab5ExpertCards";
 import Lab5AppointmentForm from "./components/Lab5AppointmentForm";
 
-import "./_lab5.scss";
 import { services } from "./data/services";
+import "./_lab5.scss";
 
 export const Lab5Page = () => {
+  let { path } = useRouteMatch();
+
   return (
     <>
       <Container className="mt-4 container__fill">
@@ -19,16 +23,33 @@ export const Lab5Page = () => {
           </Col>
         </Row>
         <hr />
+        <Nav variant="pills" justify className="mb-3">
+          <Nav.Item>
+            <Nav.Link exact as={NavHashLink} smooth to={`${path}#services`}>
+              Services
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link exact as={NavHashLink} smooth to={`${path}#experts`}>
+              Our Experts
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link exact as={NavHashLink} smooth to={`${path}#book`}>
+              Book Appointment
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
         <Row className="mb-4">
-          <Col sm={12} lg={4}>
+          <Col sm={12} lg={4} id="services">
             <Lab5ServicesTable services={services} />
           </Col>
-          <Col>
+          <Col id="experts">
             <Lab5ExpertCards />
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col id="book">
             <Lab5AppointmentForm services={services} />
           </Col>
         </Row>
