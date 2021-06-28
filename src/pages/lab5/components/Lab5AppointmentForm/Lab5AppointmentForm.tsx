@@ -37,7 +37,7 @@ interface FormValues {
   apptPref: string;
   apptService: string;
   apptCardholderName: string;
-  apptCardNumber: number;
+  apptCardNumber: string;
   apptCardExpiry: string;
   apptCardCCV: number;
 }
@@ -57,7 +57,16 @@ const schema = Yup.object().shape({
   apptPref: Yup.string().required(REQUIRED_TEXT),
   apptService: Yup.string().required(REQUIRED_TEXT),
   apptCardholderName: Yup.string().required(REQUIRED_TEXT),
-  apptCardNumber: Yup.string().min(16).max(19).required(REQUIRED_TEXT),
+  apptCardNumber: Yup.string()
+    .matches(/^(?:\d|\s)+$/, {
+      message:
+        "Invalid credit card number. You should only input numbers or spaces",
+    })
+    .matches(/^(?:\d{4}\s){3}\d{4}$/, {
+      message:
+        "Invalid credit card number. Must be in the format xxxx xxxx xxxx xxxx",
+    })
+    .required(REQUIRED_TEXT),
   apptCardExpiry: Yup.string().required(REQUIRED_TEXT),
   apptCardCCV: Yup.string().min(3).max(4).required(REQUIRED_TEXT),
 });
@@ -234,8 +243,7 @@ const InnerForm = (
         <Form.Group as={Col} controlId="apptCardNumber">
           <Form.Label>Card Number</Form.Label>
           <Form.Control
-            type="number"
-            pattern="[0-9\s]{13,19}"
+            type="text"
             name="apptCardNumber"
             value={values.apptCardNumber}
             onBlur={handleBlur}
@@ -307,7 +315,7 @@ const Lab5FormikForm = withFormik<Lab5AppointmentFormProps, FormValues>({
       apptPref: SELECT_TEXT,
       apptService: SELECT_TEXT,
       apptCardholderName: "",
-      apptCardNumber: 0,
+      apptCardNumber: "",
       apptCardExpiry: "",
       apptCardCCV: 0,
     };
