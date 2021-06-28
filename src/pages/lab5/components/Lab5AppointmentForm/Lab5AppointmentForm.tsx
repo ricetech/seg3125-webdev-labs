@@ -63,7 +63,9 @@ interface FormErrorProps {
 const FormError = (props: FormErrorProps) => {
   const { show, msg } = props;
   return show ? (
-    <Form.Control.Feedback type="invalid">{msg}</Form.Control.Feedback>
+    <Form.Control.Feedback type="invalid" className="d-block">
+      {msg}
+    </Form.Control.Feedback>
   ) : null;
 };
 
@@ -273,12 +275,17 @@ const InnerForm = (
       </Form.Row>
       <Button
         type="submit"
+        disabled={Object.keys(errors).length > 0}
         onClick={(event) => {
           event.preventDefault();
         }}
       >
         Book Appointment
       </Button>
+      <FormError
+        show={Object.keys(errors).length > 0}
+        msg="Some fields have errors. Please correct the errors and try again."
+      />
     </Form>
   );
 };
