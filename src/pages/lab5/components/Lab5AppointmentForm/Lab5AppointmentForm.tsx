@@ -1,7 +1,20 @@
 import React from "react";
 
-import { Button, Col, Container, Form } from "react-bootstrap";
-import { BsClipboard, BsClock, BsCreditCard, BsPerson } from "react-icons/bs";
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
+import {
+  BsClipboard,
+  BsClock,
+  BsCreditCard,
+  BsPerson,
+  BsQuestionCircle,
+} from "react-icons/bs";
 import * as Yup from "yup";
 import { withFormik, FormikProps } from "formik";
 
@@ -58,6 +71,7 @@ const InnerForm = (
   props: Lab5AppointmentFormProps & FormikProps<FormValues>
 ) => {
   const { services, touched, values, errors, handleChange, handleBlur } = props;
+  // noinspection RequiredAttributes
   return (
     <Form noValidate>
       <h5>
@@ -176,6 +190,20 @@ const InnerForm = (
       <h5>
         <BsCreditCard /> Payment Info
       </h5>
+      <OverlayTrigger
+        placement="bottom"
+        overlay={
+          <Tooltip id="payment-help-tooltip">
+            Your payment information is required in case of a last-minute
+            cancellation of your appointment.
+          </Tooltip>
+        }
+      >
+        <Button variant="link" className="px-0">
+          <BsQuestionCircle /> Why am I required to provide my Payment
+          Information when booking?
+        </Button>
+      </OverlayTrigger>
       <Form.Row>
         <Form.Group as={Col} controlId="apptCardholderName">
           <Form.Label>Cardholder Name</Form.Label>
