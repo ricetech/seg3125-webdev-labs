@@ -47,6 +47,27 @@ export const Lab5AppointmentForm = (props: Lab4AppointmentFormProps) => {
               </Form.Control>
             </Form.Group>
           </Form.Row>
+          <h5>Payment Info</h5>
+          <Form.Row>
+            <Form.Group as={Col} controlId="apptCardholderName">
+              <Form.Label>Cardholder Name</Form.Label>
+              <Form.Control type="text" />
+            </Form.Group>
+            <Form.Group as={Col} controlId="apptCardNumber">
+              <Form.Label>Card Number</Form.Label>
+              <Form.Control type="number" pattern="[0-9\s]{13,19}" />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} controlId="apptCardExpiry">
+              <Form.Label>Card Expiry</Form.Label>
+              <Form.Control type="month" />
+            </Form.Group>
+            <Form.Group as={Col} controlId="apptCardCCV">
+              <Form.Label>Card CCV</Form.Label>
+              <Form.Control type="number" />
+            </Form.Group>
+          </Form.Row>
           <Button type="submit" onClick={(event) => event.preventDefault()}>
             Book Appointment
           </Button>
