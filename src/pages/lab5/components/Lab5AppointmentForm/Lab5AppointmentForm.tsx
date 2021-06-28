@@ -44,6 +44,10 @@ interface FormValues {
   apptCardCCV: number;
 }
 
+const isDateValid = (date: Moment, validDays: number[]) => {
+  return validDays.includes(date.day());
+};
+
 const schema = Yup.object().shape({
   patientName: Yup.string().required(REQUIRED_TEXT),
   patientEmail: Yup.string()
@@ -169,6 +173,21 @@ const InnerForm = (
             }}
             onOpen={() => {
               setFieldTouched("apptDateTime");
+            }}
+            isValidDate={(date) => {
+              let validDays: number[] = [1, 2, 3, 4, 5];
+              switch (values.apptPref) {
+                case "Hannah":
+                  validDays = [1, 2];
+                  break;
+                case "Joe":
+                  validDays = [1, 2, 3, 4, 5];
+                  break;
+                case "Samantha":
+                  validDays = [3, 4, 5];
+                  break;
+              }
+              return isDateValid(date, validDays);
             }}
           />
           <FormError

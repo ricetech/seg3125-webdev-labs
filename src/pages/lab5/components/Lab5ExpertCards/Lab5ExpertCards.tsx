@@ -21,6 +21,8 @@ export const Lab5ExpertCards = () => {
                   Hannah is the head physiotherapist and founder of Hannah's
                   Physiotherapy Clinic. She is in charge of organizing all of
                   the services that we offer at the clinic.
+                  <br />
+                  <i>Hannah is available on Mondays and Tuesdays.</i>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -32,6 +34,8 @@ export const Lab5ExpertCards = () => {
                   Joe is one of our longest tenured physiotherapists. He works
                   closely with Hannah to make sure the experience of every
                   patient is an enjoyable one.
+                  <br />
+                  <i>Joe is available Monday through Friday.</i>
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -43,6 +47,8 @@ export const Lab5ExpertCards = () => {
                   Samantha is a physiotherapist in training at our clinic. She
                   is always ready for a new challenge and can't wait to work to
                   help our patients.
+                  <br />
+                  <i>Samantha is available Wednesday through Friday.</i>
                 </Card.Text>
               </Card.Body>
             </Card>
