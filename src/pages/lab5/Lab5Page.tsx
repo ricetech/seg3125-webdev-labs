@@ -21,6 +21,7 @@ export const Lab5Page = () => {
           <Col>
             <h1>Lab 5 - Hannah's Physiotherapy Clinic (Improved)</h1>
             <p className="mb-0">5575 Second Line, Erin, ON</p>
+            <p>Open Monday to Friday, 7pm to 11pm</p>
           </Col>
         </Row>
         <hr />
