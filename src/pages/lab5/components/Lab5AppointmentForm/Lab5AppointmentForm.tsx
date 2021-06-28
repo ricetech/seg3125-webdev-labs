@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Button, Col, Container, Form } from "react-bootstrap";
+import { BsClipboard, BsClock, BsCreditCard, BsPerson } from "react-icons/bs";
 import * as Yup from "yup";
 import { withFormik, FormikProps } from "formik";
 
@@ -59,7 +60,9 @@ const InnerForm = (
   const { services, touched, values, errors, handleChange, handleBlur } = props;
   return (
     <Form noValidate>
-      <h5>Patient Info</h5>
+      <h5>
+        <BsPerson /> Patient Info
+      </h5>
       <Form.Group controlId="apptName">
         <Form.Label>Patient Name</Form.Label>
         <Form.Control
@@ -110,7 +113,9 @@ const InnerForm = (
           />
         </Form.Group>
       </Form.Row>
-      <h5>Appointment Info</h5>
+      <h5>
+        <BsClock /> Appointment Info
+      </h5>
       <Form.Row>
         <Form.Group as={Col} controlId="apptDateTime">
           <Form.Label>Appt. Date & Time</Form.Label>
@@ -168,7 +173,9 @@ const InnerForm = (
           />
         </Form.Group>
       </Form.Row>
-      <h5>Payment Info</h5>
+      <h5>
+        <BsCreditCard /> Payment Info
+      </h5>
       <Form.Row>
         <Form.Group as={Col} controlId="apptCardholderName">
           <Form.Label>Cardholder Name</Form.Label>
@@ -275,7 +282,9 @@ export const Lab5AppointmentForm = (props: Lab4AppointmentFormProps) => {
   return (
     <>
       <Container className="container__md">
-        <h3>Book an Appointment</h3>
+        <h3>
+          <BsClipboard /> Book an Appointment
+        </h3>
         <Lab5FormikForm services={props.services} />
       </Container>
     </>

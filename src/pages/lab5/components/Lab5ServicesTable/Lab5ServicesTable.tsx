@@ -3,6 +3,7 @@ import React from "react";
 import "./_lab5-services-table.scss";
 import { Table } from "react-bootstrap";
 import { Service } from "../../interfaces/service";
+import { BsLifePreserver } from "react-icons/bs";
 
 interface Lab4ServicesTableProps {
   services: Service[];
@@ -11,7 +12,9 @@ interface Lab4ServicesTableProps {
 export const Lab5ServicesTable = (props: Lab4ServicesTableProps) => {
   return (
     <>
-      <h3>Services</h3>
+      <h3>
+        <BsLifePreserver /> Services
+      </h3>
       <Table hover>
         <thead>
           <tr>

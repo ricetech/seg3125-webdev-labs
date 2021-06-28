@@ -2,6 +2,7 @@ import React from "react";
 import { useRouteMatch } from "react-router-dom";
 import { Col, Container, Nav, Row } from "react-bootstrap";
 import { NavHashLink } from "react-router-hash-link";
+import { BsClipboard, BsLifePreserver, BsPeople } from "react-icons/bs";
 
 import Lab5ServicesTable from "./components/Lab5ServicesTable";
 import Lab5ExpertCards from "./components/Lab5ExpertCards";
@@ -26,17 +27,17 @@ export const Lab5Page = () => {
         <Nav variant="pills" justify className="mb-3">
           <Nav.Item>
             <Nav.Link exact as={NavHashLink} smooth to={`${path}#services`}>
-              Services
+              <BsLifePreserver /> Services
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link exact as={NavHashLink} smooth to={`${path}#experts`}>
-              Our Experts
+              <BsPeople /> Experts
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link exact as={NavHashLink} smooth to={`${path}#book`}>
-              Book Appointment
+              <BsClipboard /> Book Appointment
             </Nav.Link>
           </Nav.Item>
         </Nav>

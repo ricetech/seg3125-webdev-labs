@@ -1,12 +1,15 @@
 import React from "react";
 import { Card, CardDeck, Col, Row } from "react-bootstrap";
+import { BsPeople } from "react-icons/bs";
 
 import "./_lab5-expert-cards.scss";
 
 export const Lab5ExpertCards = () => {
   return (
     <>
-      <h3>Experts</h3>
+      <h3>
+        <BsPeople /> Experts
+      </h3>
       <Row>
         <Col>
           <CardDeck>
