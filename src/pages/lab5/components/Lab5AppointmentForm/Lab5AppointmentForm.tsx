@@ -36,9 +36,9 @@ const schema = Yup.object().shape({
   apptPref: Yup.string().required(REQUIRED_TEXT),
   apptService: Yup.string().required(REQUIRED_TEXT),
   apptCardholderName: Yup.string().required(REQUIRED_TEXT),
-  apptCardNumber: Yup.number().min(16).max(19).required(REQUIRED_TEXT),
+  apptCardNumber: Yup.string().min(16).max(19).required(REQUIRED_TEXT),
   apptCardExpiry: Yup.string().required(REQUIRED_TEXT),
-  apptCardCCV: Yup.number().min(3).max(4).required(REQUIRED_TEXT),
+  apptCardCCV: Yup.string().min(3).max(4).required(REQUIRED_TEXT),
 });
 
 interface FormErrorProps {
